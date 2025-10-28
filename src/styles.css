@@ -1,1 +1,189 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global Styles */
+/* Importing a Google Fonts */ 
+/* Bungee for headings, Jost for body text, Montserrat for buttons */
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Jost:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/*Global Reset*/
+body, header, nav, main, section, footer, img, figure, figcaption {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    background-color: #171412;
+    
+}
+ /* mobile first approach */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-size: 100% 100%;
+    background-position: 0px 0px;
+    background-image: radial-gradient(142% 91% at 48% -18%, #a64253 12%, #FF000000 65%);
+}
+
+
+.nav-bar {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #54642E;
+    position: fixed;
+    z-index: 100;
+}
+
+.hamburger {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #171412;
+    border-radius: 2px;
+}
+.mobile-nav {
+    position: absolute;
+    top: 75px;
+    left: 0;
+    width: 100%;
+    background-color: #54642E;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    z-index: 100;
+}
+
+.mobile-nav.open {
+    max-height: 300px; /* Adjust as needed */
+}
+
+.mobile-nav__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    text-align: right;
+}
+.mobile-nav__item {
+    margin: 10px 0;
+}
+
+.mobile-nav__link {
+    text-decoration: none;
+    color: #171412;
+    font-weight: bold;
+    text-transform: uppercase;
+ 
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+}
+
+.mobile-nav__link:hover {
+    color: #D9C3Ab;
+}
+
+
+.nav__list {
+    display: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    position: absolute;
+    top: 60px;
+    width: 100%;
+    background: #54642E;
+    padding: 1rem;
+}
+
+.social-icons{
+    display: none;
+}
+
+.nav__list ul {
+    flex-direction: column;
+}
+
+.nav__list.active {
+    display: block;
+}
+
+.nav__item {
+    margin: 0.5rem 0;
+    /*text-align: center;*/
+    padding-top: 1.5rem;
+}   
+.nav__link {
+    text-decoration: none;
+    color: #171412;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Desktop and larger tablets */
+@media (min-width: 768px) {
+    .wrapper {
+        display: flex;
+        flex-direction: row;
+      background-size: 100% 100%;
+background-position: 0px 0px,0px 0px;
+background-image: radial-gradient(142% 91% at 128% -2%, #a64253 1%, #FF000000 58%),radial-gradient(156% 95% at -67% 127%, #a64253 37%, #FF000000 91%);
+    }
+
+    .nav-bar {
+        width: 200px; /*change value as needed*/
+        height: 100vh;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 2rem 1rem;
+        position: fixed;
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+    .nav__list {
+        display: flex;
+        flex-direction: column;
+        position: static;
+        width: auto;
+        background: none;
+        padding: 0;
+        margin-top: 2rem;
+    
+    }
+
+    ul {
+        list-style-type: none;
+    }
+
+    .nav__link:hover {
+        color: #D9C3Ab;
+    }
+
+    .social-icons {
+        display: flex;
+        flex-direction: row;
+        margin-top: auto;
+        
+    }
+
+    .social-icon {
+        padding: 0.5em;
+    }
+   
+   
+}
