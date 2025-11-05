@@ -13,7 +13,13 @@
     "experimentalDecorators": true,
     "importHelpers": true,
     "target": "ES2022",
-    "module": "preserve"
+    "module": "esnext", /*tell TS to use ES module syntax*/
+    "lib": [
+      "ES2022",
+      "DOM"
+    ],
+    "moduleResolution": "Node",
+    "baseUrl": "./"
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
