@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
+
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   template: `
     <main>
       <header>
@@ -12,7 +14,7 @@ import { Component } from '@angular/core';
         <p>Full - Stack Web Developer</p>
       </header>
 
-      <button class="about-link">About Me</button>
+      <button class="about-link" [routerLink]="['/about']">About Me</button>
     </main>
   `,
   styles: `
@@ -57,7 +59,7 @@ import { Component } from '@angular/core';
   button {
     background-color: #a64253;
     border-radius: 40px;
-  
+
     }
 
   .about-link {
@@ -133,7 +135,7 @@ header {
     text-shadow: 5px 5px 5px #a64253;
   }
 }
-   
+
   `
 })
 export class HomeComponent {

@@ -1,17 +1,18 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   template: `
     <main>
 
       <div class="content-mobile">
         <p class="upper-text">
-          Full-stack web developer creating modern, 
-          responsive websites with custom features, secure 
-          integrations, and tailored design. 
+          Full-stack web developer creating modern,
+          responsive websites with custom features, secure
+          integrations, and tailored design.
         </p>
 
         <div class="lower-content">
@@ -20,33 +21,33 @@ import { Component } from '@angular/core';
 
          <div class="lower-text-container">
           <p class="lower-text">
-            I handle development, maintenance, and 
+            I handle development, maintenance, and
             content management to fit your goals.
           </p>
 
-          <button class="project-link">My Projects</button>
+          <button class="project-link" [routerLink]="['/projects']">My Projects</button>
 
           </div>
-        </div> 
+        </div>
       </div>
 
 
       <div class="content-desktop">
         <div class="desktop-text-container">
         <p>
-        With a background in full-stack web development, 
-        I specialize in building modern, responsive websites that 
-        balance clean design with powerful functionality. From custom 
-        layouts and interactive features to secure integrations like 
-        e-commerce and payment systems, I focus on creating solutions 
+        With a background in full-stack web development,
+        I specialize in building modern, responsive websites that
+        balance clean design with powerful functionality. From custom
+        layouts and interactive features to secure integrations like
+        e-commerce and payment systems, I focus on creating solutions
         that fit each client’s unique goals.
         </p>
 
-        <p>I hold a bachelor’s degree in full-stack web development and 
-        have hands-on experience with technologies like Angular, Node.js, 
-        Express, and MongoDB. My services include website design, 
-        development, ongoing maintenance, and custom content management 
-        solutions, ensuring every project is built to grow and adapt 
+        <p>I hold a bachelor’s degree in full-stack web development and
+        have hands-on experience with technologies like Angular, Node.js,
+        Express, and MongoDB. My services include website design,
+        development, ongoing maintenance, and custom content management
+        solutions, ensuring every project is built to grow and adapt
         with your needs.
         </p>
         </div>
@@ -81,7 +82,7 @@ import { Component } from '@angular/core';
     font-weight: bold;
     color: #d9c3ab;
     padding: 10px;
-   
+
   }
 
   .lower-content {
@@ -176,7 +177,7 @@ import { Component } from '@angular/core';
 
 }
 
-@media (min-width: 1024px) { 
+@media (min-width: 1024px) {
 
   p {
     font-size: 1.2em;
