@@ -30,7 +30,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
         </div>
 
         <!--Regular Nav for Desktop-->
-        
+
 
         <ul class='nav__list'>
           <li class='nav__item'><a class='nav__link' [routerLink]="['/about']">About me</a></li>
@@ -39,10 +39,10 @@ import { RouterLink, RouterOutlet } from '@angular/router';
         </ul>
 
         <div class='social-icons'>
-          <a class='social-icon' href='https://github.com/yourusername' target='_blank'> <!--Replace URl --> 
+          <a class='social-icon' href='https://github.com/leahhwd' target='_blank'> <!--Replace URl -->
             <img src="images/github-mark.png" width="50" alt="GitHub">
           </a>
-          <a class='social-icon' href='https://linkedin.com/in/yourusername' target='_blank'> <!--Replace URl -->
+          <a class='social-icon' href='https://linkedin.com/in/lmkdev' target='_blank'> <!--Replace URl -->
             <img src="images/InBug-Black.png" width="50" alt="LinkedIn">
           </a>
         </div>
@@ -59,7 +59,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 })
 export class App {
   protected readonly title = signal('my-portfolio');
-  
+
   mobileNavOpen = false;
 
   toggleMobileNav(): void {
