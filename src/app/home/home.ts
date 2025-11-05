@@ -22,11 +22,10 @@ import { RouterLink } from '@angular/router';
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding: 20px;
     text-align: center;
   }
   header {
-    margin-bottom: 20px;
+    margin-bottom: 5px;
   }
   h1 {
   font-family: 'Bungee';
@@ -52,7 +51,7 @@ import { RouterLink } from '@angular/router';
     font-weight: 700;
     font-size: 2.5em;
     text-transform: uppercase;
-    margin-top: 6rem;
+
     text-shadow: 2.5px 2px 2px #a64253;
   }
 
@@ -80,8 +79,8 @@ import { RouterLink } from '@angular/router';
     justify-content: center;
     align-items: flex-end;
     text-align: right;
-    min-height: 100vh;
-    min-width: 100vw;
+    height: 100vh;
+    width: 100vw;
     padding: 5%;
     padding-left: 200px;
   }
