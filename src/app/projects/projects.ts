@@ -12,7 +12,7 @@ import { Project as ProjectService } from '../services/project'; // Alias to avo
    <div class="wrapper" (mouseenter)="pauseAutoplay()" (mouseleave)="resumeAutoplay()"> <!-- Wrapper div for carousel with mouse events to pause and resume autoplay -->
 
     <div class="project-container" [ngStyle]="getCarouselStyle()"> <!-- project container for 3D carousel effect with dynamic styles-->
-       
+
             <div class="active-project" *ngFor="let project of projects; let i = index" [ngStyle]="getItemStyle(i)"> <!-- Loop through projects and apply dynamic styles for 3D effect -->
                 <div class="project-image">
                     <img [src]="project.img" [alt]="project.title" />
@@ -20,94 +20,125 @@ import { Project as ProjectService } from '../services/project'; // Alias to avo
                 <div class="reflection"></div> <!--edit reflection styles-->
             </div>
     </div>
-        
+
 
     <div class="project-info"> <!-- Project info section -->
+
         <h2>{{ projects[currentIndex]?.title }}</h2>
         <p>{{ projects[currentIndex]?.description }}</p>
+
+
+
     </div>
 
-
-    <!-- Navigation buttons -->
-        <button class="nav-button prev" (click)="navigate(-1)">&#10094;</button>
-        <!--<button class="project-link">View {{ projects[currentIndex]?.title }}</button> Add Later-->
+      <!-- Navigation buttons -->
+    <div class="nav-buttons">
+      <button class="nav-button prev" (click)="navigate(-1)">&#10094;</button>
+        <button class="project-link">View {{ projects[currentIndex]?.title }}</button>
         <button class="nav-button next" (click)="navigate(1)">&#10095;</button>
+  </div>
+
+
+
 
 </div>
-   
+
   `,
   styles: `
 
 .wrapper {
     position: relative;
-    height: 60vh;
-    width: calc(100vw - 200px);
-    margin-left: 200px;
+    height: auto;
+    width: 100%;
+    margin: 0 auto;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    perspective: 1800px; /*Add perspective for 3D effect*/
+    perspective: 1000px; /*Add perspective for 3D effect*/
     overflow: hidden;
-    max-width: 1000px;
+    padding-bottom: 2rem;
     background: transparent;
 }
 
 .project-container {
     width: 100%;
-    height: 100%;
+    max-width: 700px;
+    height: 300px; /*change height to stop overlap into info?*/
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transform-style: preserve-3d;
-    transition: transform 1s ease-in-out; 
-    margin-bottom: 200px;
+    transition: transform 1s ease-in-out;
+    /*margin-bottom: 200px;*/
 }
 
 .active-project {
     position: absolute;
     top: 50%;
-    left: 50%;
-    width: 250px;
-    height: 300px;
-
-    /*
-    Using VH and VW caused issues with centering and responsiveness
-    text-align: center;
-    margin: -10.5vh 0 0 -14.5vw;
-    border-radius: 10px;
+    padding: 0 30px;
+    height: 320px; /*Adjust image height?*/
+    transform: translate(-50%, 50%);
+    border-radius: 14px;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    background: white;*/
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    transition: transform 0.5s, cubic-bezier (.2, .8, .2 .1) opacity 0.5s;
+    will-change: transform, opacity;
+}
 
-    margin: -90px 0 0 -125px; 
-    transform-origin: center center;
-    text-align: center;
-    border-radius: 10px;
-    overflow: hidden;
-     box-shadow: 0 3px 8px rgba(166, 66, 83, 1);
+/* make active card pop a bit (we also set this in TS via scale if desired) TAKEOUT*/
+.active-project[data-active="true"] {
+  transform: translate(-50%, -50%) scale(1.06);
+  z-index: 6;
+  box-shadow: 0 18px 36px rgba(166,66,83,0.25);
 }
 
 .project-image img {
     width: 100%;
-    height: auto;
-    border-radius: inherit;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    border-radius: 14px;
 }
 
 .project-info {
-   position: absolute;
-        bottom: 15%; /* bring into view inside the wrapper */
-        width: 100%; /*change width?*/
-        background: #D9c3ab;
+  position: relative;
+   margin-top: 225px;
+
+        width: 90%; /*change width?*/
+        height: 200px; /*change height?*/
+        outline: 2px solid #D9c3ab;
         font-family: 'Jost', sans-serif;
         text-align: center;
+        color: #d9c3ab;
+}
+
+.project-info p {
+  padding: 0 1rem;
+  font-size: 1.5rem;
+}
+
+.nav-buttons {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 3rem;
+    padding: 1rem;
 }
 
 .nav-button {
-    position: absolute;
+    position: relative;
     top: 92%;
     transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.7);
+    background: none;
+    color: #D9c3ab;
     border: none;
-    font-size: 2rem;
-    /*font-size: clamp(1.5rem, 4vw, 2rem);*/
+    font-size: 3rem;
     cursor: pointer;
     z-index: 10;
     border-radius: 50%;
@@ -115,141 +146,44 @@ import { Project as ProjectService } from '../services/project'; // Alias to avo
     transition: background 0.3s;
 }
 
-
-
-.nav-button:hover {
-    background: blue;
-}
-
 .nav-button.prev {
     left: 10%;
-    
 }
 
 .nav-button.next {
     right: 10%;
 }
 
+button.project-link {
+    background-color: #a64253;
+    border-radius: 40px;
+    width: 50%;
+    font-family: 'Jost', bold;
+    font-weight: 500;
+    font-size: 1em;
+    text-transform: uppercase;
+    color: #d9c3ab;
+    padding: 10px;
+  }
 
-@media (max-width: 768px) {
+  @media (min-width: 768px) {
     .wrapper {
-        position: relative;
-        margin-left: 200px;
-        width: calc(100vw - 200px);
-        height: 70vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        perspective: 1000px; /* Adjust perspective for smaller screens */
-        overflow: hidden;
-        background: transparent;
+      margin-left: 225px;
+      width: calc(100% - 225px); /* Adjust width to account for sidebar */
+      perspective: 1500px; /* Increase perspective for larger screens */
+      height: auto;
     }
 
-    .project-container {
-        position: relative;
-        height: 100%;
-        width: 100%;
-        transform-style: preserve-3d;
-        transition: transform 1s ease-in-out;
-        margin-bottom: 200px;
-      
-    }
+  }
 
-    .active-project {
-      position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 200px;
-        height: 250px;
-        margin: -70px 0 0 -100px; 
-        transform-origin: center center;
-        text-align: center;
-        border-radius: 10px;
-        box-shadow: 0 3px 8px rgba(166, 66, 83, 1);
-    }
-       .project-image img {
-        display: block;
-        width: 100%;
-        height: auto;
-        border-radius: inherit;
-    }
-        .project-info {
-        position: absolute;
-        bottom: 15%; /* bring into view inside the wrapper */
-        width: 100%; /*change width?*/
-        background: #D9c3ab;
-        font-family: 'Jost', sans-serif;
-        }
-
-    .nav-button {
-        position: absolute;
-        top: 92%;
-        font-size: 1.5rem;
-        padding: 0.3rem;
-    }
-
-    .nav-button.prev {
-        left: 5%;
-    }
-
-    .nav-button.next {
-        right: 5%;
-    }
-}
-
-@media (max-width: 480px) {
+  @media (min-width: 1200px) {
     .wrapper {
-        height: 30vh;
-        perspective: 500px;
+      margin-left: 400px;
+      width: calc(100% - 400px); /* Adjust width to account for sidebar */
     }
 
-    
-
-    .active-project {
-        width: 150px;
-        height: 100px;
-        margin: -50px 0 0 -75px; 
-    }
-
-  
-
-    .project-image img {
-        display: block;
-        width: 100%;
-        height: auto;
-    }
-
-   /* .nav-button {
-        display: none; /* Hide navigation buttons on small screens 
-
-        Try 
-        .scroll-container {
-        overflow-x: scroll;
-        scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch; /* for smooth scrolling on iOS
-        
-        }
-
-        .scroll-item {
-        scroll-snap-align: center;
-        }
-    }*/
-
-    .nav-button {
-        top: 85%;
-        font-size: 1.2rem;
-        padding: 0.2rem;
-    }
-
-    .nav-button.prev {
-        left: 3%;
-    }
-
-    .nav-button.next {
-        right: 3%;
-    }
-}
-  `
+  }
+`
 })
 export class ProjectsComponent implements OnInit, OnDestroy {
 
@@ -266,7 +200,7 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 
   currentIndex = 0; //Current index of project carousel
   private _autoplayTimer: any = null; // Timer reference for autoplay
- 
+
 
   // Lifestyle hooks enable autoplay on init and clean up on destroy
   ngOnInit(): void {
@@ -328,17 +262,27 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 
   //Method for 3D carousel effect
   getCarouselStyle() {
+    const depth = Math.min(Math.max(window.innerWidth / 5, 400), 500);
+    const normalizedAngle = (this.rotationAngle % 360 + 360) % 360; // Normalize angle to [0, 360);
+
+    //console.log('Depth:', depth);
+    //console.log('Rotation Angle:', this.rotationAngle % 360);
 
     return {
-      transform : `translateZ(-288px) rotateY(${this.rotationAngle}deg)` //Need to change?
-    }
+      transform : `translateZ(-${depth}px) rotateY(${normalizedAngle}deg)` //Need to change?
+    };
   }
 
-  //Method for individual item styling in 3d carousel 
+  //Method for individual item styling in 3d carousel
   getItemStyle(index: number) {
+    const depth = Math.min(Math.max(window.innerWidth / 5, 400), 800); // Adjust depth based on screen size
     const angle = (360 / this.projects.length) * index;
+
+    //console.log(`Item ${index}`, 'Angle:', angle);
+    //console.log(`Item: ${index}`, 'depth:', depth);
+
     return {
-      transform: `rotateY(${angle}deg) translateZ(288px)` //Need to change?
+      transform: `rotateY(${angle}deg) translateZ(${depth}px)` //Need to change?
     };
   }
 
