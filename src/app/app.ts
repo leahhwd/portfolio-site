@@ -1,6 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -12,7 +13,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
       <nav class='nav-bar'>
 
 
-        <a class='nav__logo' [routerLink]="['/']"><img src="images/L-3.png" width="100" alt="Logo"></a> <!-- Fix logo width -->
+        <a class='nav__logo' [routerLink]="['/']"><img src="images/L-3.png" width="100" alt="Logo" (click)="closeMobileNav()"></a> <!-- Fix logo width -->
 
         <!--Hamburger Menu for Mobile-->
         <button class='hamburger' id='hamburger' (click)="toggleMobileNav()">
@@ -69,4 +70,5 @@ export class App {
   closeMobileNav(): void {
     this.mobileNavOpen = false;
   }
+
 }
