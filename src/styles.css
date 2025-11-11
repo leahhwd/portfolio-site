@@ -90,6 +90,16 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.2rem;
 }
+.mobile-nav__link--contact {
+    display: inline-block;
+    margin: 1rem auto;
+    padding: 0.6rem 1.2rem;
+    border: 2px solid #A64253;
+    box-shadow: 0 0 15px #A64253;
+    background: transparent;
+    border-radius: 5px;
+    cursor: pointer;
+}
 
 .mobile-nav__link:hover {
     color: #D9C3Ab;
@@ -165,6 +175,16 @@ background-image: radial-gradient(142% 91% at 128% -2%, #a64253 1%, #FF000000 58
         margin-top: 2rem;
 
     }
+
+    .nav__link--contact {
+    margin: 1rem auto;
+    padding: 0.6rem 1.2rem;
+    border: 2px solid #A64253;
+    box-shadow: 0 0 15px #A64253;
+    background: transparent;
+    border-radius: 5px;
+    cursor: pointer;
+}
 
     ul {
         list-style-type: none;

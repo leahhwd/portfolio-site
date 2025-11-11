@@ -26,7 +26,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
           <ul class='mobile-nav__list'>
             <li class='mobile-nav__item'><a class='mobile-nav__link' [routerLink]="['/about']" (click)="closeMobileNav()">About me</a></li>
             <li class='mobile-nav__item'><a class='mobile-nav__link' [routerLink]="['/projects']" (click)="closeMobileNav()">my Projects</a></li>
-            <li class='mobile-nav__item'><a class='mobile-nav__link' [routerLink]="['/contact']" (click)="closeMobileNav()">Contact</a></li>
+            <li class='mobile-nav__item'><a class='mobile-nav__link mobile-nav__link--contact' [routerLink]="['/contact']" (click)="closeMobileNav()">Contact</a></li>
           </ul>
         </div>
 
@@ -36,7 +36,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
         <ul class='nav__list'>
           <li class='nav__item'><a class='nav__link' [routerLink]="['/about']">About me</a></li>
           <li class='nav__item'><a class='nav__link' [routerLink]="['/projects']">my Projects</a></li>
-          <li class='nav__item'><a class='nav__link' [routerLink]="['/contact']">Contact</a></li>
+          <li class='nav__item'><a class='nav__link nav__link--contact' [routerLink]="['/contact']">Contact</a></li>
         </ul>
 
         <div class='social-icons'>
