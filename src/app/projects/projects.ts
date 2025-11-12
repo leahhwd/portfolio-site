@@ -105,13 +105,22 @@ import { Project as ProjectService } from '../services/project'; // Alias to avo
 .project-info {
   position: relative;
    margin-top: 225px;
+   box-shadow: 0 0 25px #A64253;
 
         width: 90%; /*change width?*/
         height: 200px; /*change height?*/
-        outline: 2px solid #D9c3ab;
-        font-family: 'Jost', sans-serif;
+        outline: 2px solid #a64253;
+        border-radius: 10px;
+        font-family: 'Kira Code', monospace;
+        padding-bottom: 1rem;
         text-align: center;
         color: #d9c3ab;
+}
+
+.project-info h2 {
+  padding: .5rem;
+  font-family: 'Fira Code', monospace;
+  font-weight: 400;
 }
 
 .project-info p {
@@ -155,15 +164,19 @@ import { Project as ProjectService } from '../services/project'; // Alias to avo
 }
 
 button.project-link {
-    background-color: #a64253;
-    border-radius: 40px;
+     margin: 1rem auto;
+    padding: 0.6rem 1.2rem;
+    border: 2px solid #A64253;
     width: 50%;
-    font-family: 'Jost', bold;
-    font-weight: 500;
-    font-size: 1em;
+    background: transparent;
+    color: #D9c3ab;
+    font-family: 'Fira Code', monospace;
+    font-weight: 400;
+    font-size: 1rem;
     text-transform: uppercase;
-    color: #d9c3ab;
-    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 0 25px #A64253;
   }
 
   @media (min-width: 768px) {

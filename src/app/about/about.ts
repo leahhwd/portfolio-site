@@ -22,7 +22,7 @@ import { RouterLink } from '@angular/router';
          <div class="lower-text-container">
           <p class="lower-text">
             I handle development, maintenance, and
-            content management to fit your goals.
+            content management systems formulated to fit your goals.
           </p>
 
           <button class="project-link" [routerLink]="['/projects']">My Projects</button>
@@ -76,8 +76,8 @@ import { RouterLink } from '@angular/router';
   }
 
   .upper-text {
-    font-size: 1.5em;
-    font-family: 'Jost', sans-serif;
+    font-size: 1.25em;
+    font-family: 'Fira Code', monospace;
     max-width: 100%;
     font-weight: bold;
     color: #d9c3ab;
@@ -102,9 +102,9 @@ import { RouterLink } from '@angular/router';
   }
 
   .lower-text {
-    font-size: 1.5em;
+    font-size: 1.25em;
     font-weight: bold;
-    font-family: 'Jost', sans-serif;
+    font-family: 'Fira Code', monospace;
     color: #d9c3ab;
     margin-right: 20px;
   }
@@ -117,15 +117,21 @@ import { RouterLink } from '@angular/router';
   }
 
   button.project-link {
-    background-color: #a64253;
-    border-radius: 40px;
-    width: 75%;
-    font-family: 'Jost', bold;
-    font-weight: 500;
-    font-size: 1em;
+    display: block;
+    margin: 1rem auto;
+    padding: 0.6rem 1.2rem;
+    border: 2px solid #A64253;
+    background: transparent;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #A64253;
+    cursor: pointer;
+  }
+    .project-link {
+    font-family: 'Fira Code', monospace;
     text-transform: uppercase;
-    color: #d9c3ab;
-    padding: 10px;
+    font-weight: 400;
+    font-size: 1rem;
+    color: #D9c3ab;
   }
 
   .content-desktop {
@@ -161,10 +167,12 @@ import { RouterLink } from '@angular/router';
   }
 
   p {
-    font-size: 1.05em;
-    font-family: 'Jost', sans-serif;
+    font-size: 1em;
+    font-family: 'Fira Code', monospace;
     color: #d9c3ab;
-    font-weight: bold;
+    line-height: 1.35;
+    font-weight: 550;
+    text-transform: uppercase;
     text-align: left;
   }
 

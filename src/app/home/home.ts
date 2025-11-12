@@ -28,42 +28,51 @@ import { RouterLink } from '@angular/router';
     margin-bottom: 5px;
   }
   h1 {
-  font-family: 'Bungee';
-    font-size: 5em;
+    font-family: 'Fira Code', monospace;
+    text-transform: uppercase;
+    font-size: 6em;
     margin-bottom: 5px;
-    padding-top: 6rem;
-    font-weight: 800;
+    padding-top: 5rem;
+    font-weight: 700;
     color: #d9c3ab;
-    -webkit-text-stroke: .2px black;
+    -webkit-text-stroke: 2px black;
     text-shadow: 2.5px 2px 2px #a64253;
   }
   h2 {
-    font-family: 'Bungee';
-    font-size: 1.75em;
+    font-family: 'Fira Code', monospace;
+    font-size: 2.2em;
     color: black;
     margin-top: 0;
-    -webkit-text-stroke: 1px #d9c3ab;
+    -webkit-text-stroke: 1px #a64253;
   }
   p {
     font-size: 2em;
     color: #d9c3ab;
-    font-family: 'Jost', bold;
-    font-weight: 700;
-    font-size: 2.5em;
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 600;
+    line-height: 1.5;
+    font-size: 2.75em;
     text-transform: uppercase;
-
+    margin: 40px 10px 30px 10px;
+    padding-top: 1rem;
     text-shadow: 2.5px 2px 2px #a64253;
   }
 
   button {
-    background-color: #a64253;
-    border-radius: 40px;
-
+    
+    margin: 1rem auto;
+    padding: 0.6rem 1.2rem;
+    border: 2px solid #A64253;
+    box-shadow: 0 0 20px #A64253;
+    background: transparent;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
     }
 
   .about-link {
-    font-family: 'Jost', bold;
-    font-weight: 500;
+    font-family: 'Fira Code', monospace;
+    font-weight: 400;
     font-size: 1em;
     color: #d9c3ab;
     margin: 20px;
@@ -92,9 +101,17 @@ import { RouterLink } from '@angular/router';
     text-align: right;
     font-size: 1.5em;
   }
+  h1 {
+    font-weight: 700;
+  }
+
+  h2 {
+    color: #a64253;
+    -webkit-text-stroke: none;
+  }
 
   p {
-  font-size: 1.25em;
+  font-size: 2.5em;
   }
 
   button {
@@ -103,15 +120,21 @@ import { RouterLink } from '@angular/router';
 }
 
   @media (min-width: 1024px) {
+ 
 
   header {
     font-size: 2em;
+    
     }
 
   h1 {
     -webkit-text-stroke: 3px black;
     text-shadow: 3.5px 3px 3px #a64253;
   }
+    p {
+    font-size: 1.5em;
+    
+    }
 }
 
 @media (min-width: 1440px) {

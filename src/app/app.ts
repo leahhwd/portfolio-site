@@ -24,8 +24,8 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 
         <div class="mobile-nav" id="mobile-nav" [class.open]="mobileNavOpen">
           <ul class='mobile-nav__list'>
-            <li class='mobile-nav__item'><a class='mobile-nav__link' [routerLink]="['/about']" (click)="closeMobileNav()">About me</a></li>
-            <li class='mobile-nav__item'><a class='mobile-nav__link' [routerLink]="['/projects']" (click)="closeMobileNav()">my Projects</a></li>
+            <li class='mobile-nav__item'><a class='mobile-nav__link' [routerLink]="['/about']" (click)="closeMobileNav()">01. About me</a></li>
+            <li class='mobile-nav__item'><a class='mobile-nav__link' [routerLink]="['/projects']" (click)="closeMobileNav()">02. my Projects</a></li>
             <li class='mobile-nav__item'><a class='mobile-nav__link' [routerLink]="['/contact']" (click)="closeMobileNav()">Contact</a></li>
           </ul>
         </div>
@@ -34,8 +34,8 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 
 
         <ul class='nav__list'>
-          <li class='nav__item'><a class='nav__link' [routerLink]="['/about']">About me</a></li>
-          <li class='nav__item'><a class='nav__link' [routerLink]="['/projects']">my Projects</a></li>
+          <li class='nav__item'><a class='nav__link' [routerLink]="['/about']">01. About me</a></li>
+          <li class='nav__item'><a class='nav__link' [routerLink]="['/projects']">02. my Projects</a></li>
           <li class='nav__item'><a class='nav__link' [routerLink]="['/contact']">Contact</a></li>
         </ul>
 

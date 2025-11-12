@@ -70,8 +70,8 @@ import { ContactFormModel } from '../models/contact-form.model';
   h1 {
     text-align: center;
     text-transform: uppercase;
-    font-family: 'Jost', sans-serif;
-    margin-top: 20%;
+    font-family: 'Inter Tight', sans-serif;
+    margin-top: 25%;
     font-size: 1.5rem;
     padding: 10px;
     color: #d9c3ab;
@@ -88,7 +88,7 @@ import { ContactFormModel } from '../models/contact-form.model';
     padding: 20px;
     border: 2px solid #A64253;
     box-shadow: 0 0 15px #A64253;
-    border-radius: 8px;
+    border-radius: 10px;
     background-color: transparent;
 }
 
@@ -117,7 +117,7 @@ import { ContactFormModel } from '../models/contact-form.model';
     padding: 8px 8px;
     border: 1px solid #A64253;
     background: transparent;
-    border-radius: 4px;
+    border-radius: 10px;
     font-size: 1rem;
     color: #D9c3ab;
     box-sizing: border-box;
@@ -125,8 +125,9 @@ import { ContactFormModel } from '../models/contact-form.model';
 }
 
 .form-group label {
+font-family: 'Fira Code', monospace;
     margin-bottom: 0.5rem;
-    font-weight: bold;
+    
     color: #D9c3ab;
 }
 
@@ -140,11 +141,10 @@ button {
     margin: 1rem auto;
     padding: 0.6rem 1.2rem;
     border: 2px solid #A64253;
-    
-
     background: transparent;
-    color: white;
-    border-radius: 5px;
+    color: #D9c3ab;
+    border-radius: 10px;
+    font-family: 'Fira Code', monospace;
     cursor: pointer;
 }
 
@@ -166,7 +166,7 @@ button:hover {
 
     h1 {
         font-size: 2rem;
-        padding: 0 5%;
+        padding: 0;
         }
     .contact-form-container {
         padding: 15px;
@@ -184,7 +184,7 @@ button:hover {
     
     h1 {
         font-size: 2.5rem;
-        padding: 0 15%;
+        
        
     }
 
