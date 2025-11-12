@@ -34,8 +34,8 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 
 
         <ul class='nav__list'>
-          <li class='nav__item'><a class='nav__link' [routerLink]="['/about']">About me</a></li>
-          <li class='nav__item'><a class='nav__link' [routerLink]="['/projects']">my Projects</a></li>
+          <li class='nav__item'><a class='nav__link' [routerLink]="['/about']">01. About me</a></li>
+          <li class='nav__item'><a class='nav__link' [routerLink]="['/projects']">02. my Projects</a></li>
           <li class='nav__item'><a class='nav__link nav__link--contact' [routerLink]="['/contact']">Contact</a></li>
         </ul>
 

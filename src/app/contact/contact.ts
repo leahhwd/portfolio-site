@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, NgForm } from '@angular/forms';
 import { ContactFormModel } from '../models/contact-form.model';
+import emailjs, {type EmailJSResponseStatus} from '@emailjs/browser';
 
 @Component({
   selector: 'app-contact',
@@ -14,7 +15,7 @@ import { ContactFormModel } from '../models/contact-form.model';
 
     <div class="contact-form-container">
 
-        <form #contactForm="ngForm" (ngSubmit)="onSubmit()" *ngIf="!submitted">
+        <form #contactForm="ngForm" (ngSubmit)="sendEmail($event)" *ngIf="!submitted">
         
         <div class="form-columns">
             <div class="form-left">
@@ -53,7 +54,7 @@ import { ContactFormModel } from '../models/contact-form.model';
             </div>
         </div>
 
-        <button type="submit" [disabled]="!contactForm.form.valid">Submit</button>
+    <button type="submit" [disabled]="!contactForm.form.valid || isSending">{{ isSending ? 'Sending...' : 'Submit' }}</button>
 
         </form>
     </div>
@@ -250,14 +251,34 @@ button:hover {
 })
 export class ContactComponent {
     contact = new ContactFormModel();
-  submitted = false;
+    submitted = false;
+    isSending = false;
 
-  onSubmit() {
-    console.log('form submitted', this.contact);
+    public async sendEmail(e: Event) {
+        e.preventDefault();
 
-    //add email service here
+        const form = e.target as HTMLFormElement;
+        this.isSending = true;
 
-    this.submitted = true;
-  }
+        try {
+            // pass public key as string (4th argument) — not an options object
+            const result = await emailjs.sendForm(
+                'service_z8s3vke',
+                'template_2gc7qfg',
+                form,
+                'wky16DxMZoLPlayR_'
+            ) as EmailJSResponseStatus;
+
+            console.log('Email sent successfully:', result);
+            this.submitted = true;
+            // Optionally reset the form model
+            this.contact = new ContactFormModel();
+        } catch (error) {
+            console.error('Error sending email:', error);
+            // keep submitted = false so user can retry
+        } finally {
+            this.isSending = false;
+        }
+    }
 
 }
