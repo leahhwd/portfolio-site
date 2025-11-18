@@ -14,13 +14,14 @@ body, header, nav, main, section, footer, img, figure, figcaption {
 }
 
 /* {
-    outline: 1px solid rgba(255, 0, 0, 0.1); Debugging outlines 
+    outline: 1px solid rgba(255, 0, 0, 0.1); Debugging outlines
 } */
 
 html, body {
     height: 100%;
     background-color: #171412;
-    
+    overflow-y: scroll;
+
 
 }
  /* mobile first approach */

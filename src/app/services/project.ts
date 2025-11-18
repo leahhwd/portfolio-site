@@ -1,11 +1,22 @@
+export interface Project {
+  id: number;
+  title: string;
+  description: string;
+  img: string;
+  link: string;
+}
+
 import { Injectable } from '@angular/core';
+
 
 @Injectable({
   providedIn: 'root'
 })
-export class Project {
+export class ProjectService {
 
-  private projects = [
+
+
+  private Project = [
     { id: 0,
       title: "Project Alpha",
       description: "A cutting-edge project focused on AI development.",
@@ -24,7 +35,7 @@ export class Project {
       img: "/images/image3.jpg",
       link: "https://example.com/project-gamma"
     },
-    { id: 3,  
+    { id: 3,
       title: "Project Delta",
       description: "A cloud-based solution for data management.",
       img: "/images/image4.jpg",
@@ -39,8 +50,8 @@ export class Project {
   ];
 
   getProjects() {
-    return this.projects;
+    return this.Project;
   }
-  
-  
+
+
 }
