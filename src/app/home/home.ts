@@ -59,7 +59,7 @@ import { RouterLink } from '@angular/router';
   }
 
   button {
-    
+
     margin: 1rem auto;
     padding: 0.6rem 1.2rem;
     border: 2px solid #A64253;
@@ -88,21 +88,27 @@ import { RouterLink } from '@angular/router';
     justify-content: center;
     align-items: flex-end;
     text-align: right;
-    height: 100vh;
+    min-height: 100vh;
     width: 100vw;
-    padding: 5%;
     padding-left: 200px;
+
+
   }
 
-  header {
+  header { /*addpadding*/
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     text-align: right;
     font-size: 1.5em;
+
+     margin-bottom: 0;
+     padding-right: 10px;
+
   }
   h1 {
-    font-weight: 700;
+    font-weight: 600;
+    padding-top: 0;
   }
 
   h2 {
@@ -111,7 +117,7 @@ import { RouterLink } from '@angular/router';
   }
 
   p {
-  font-size: 2.5em;
+  font-size: 1.5em;
   }
 
   button {
@@ -120,11 +126,11 @@ import { RouterLink } from '@angular/router';
 }
 
   @media (min-width: 1024px) {
- 
+
 
   header {
     font-size: 2em;
-    
+
     }
 
   h1 {
@@ -133,11 +139,15 @@ import { RouterLink } from '@angular/router';
   }
     p {
     font-size: 1.5em;
-    
+
     }
 }
 
 @media (min-width: 1440px) {
+
+  header {
+    padding-right: 50px;
+  }
 
   p {
     font-size: 2em;
