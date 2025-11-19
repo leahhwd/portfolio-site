@@ -16,7 +16,7 @@ import emailjs, {type EmailJSResponseStatus} from '@emailjs/browser';
     <div class="contact-form-container">
 
         <form #contactForm="ngForm" (ngSubmit)="sendEmail($event)" *ngIf="!submitted">
-        
+
         <div class="form-columns">
             <div class="form-left">
                 <div class="form-group">
@@ -50,13 +50,19 @@ import emailjs, {type EmailJSResponseStatus} from '@emailjs/browser';
                 <div class="form-group">
                     <label class="form-label" for="message">Message:</label>
                     <textarea class="form-control" id="message" name="message" [(ngModel)]="contact.message" required></textarea>
-                </div> 
+                </div>
             </div>
         </div>
 
     <button type="submit" [disabled]="!contactForm.form.valid || isSending">{{ isSending ? 'Sending...' : 'Submit' }}</button>
 
+
+
         </form>
+
+        <div class="response-message" *ngIf="submitted">
+       {{message}}
+      </div>
     </div>
 </div>
   `,
@@ -81,7 +87,7 @@ import emailjs, {type EmailJSResponseStatus} from '@emailjs/browser';
 
 .contact-form-container {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     max-width: 800px;
     /* center horizontally regardless of parent offsets */
     width: 100%;
@@ -128,7 +134,7 @@ import emailjs, {type EmailJSResponseStatus} from '@emailjs/browser';
 .form-group label {
 font-family: 'Fira Code', monospace;
     margin-bottom: 0.5rem;
-    
+
     color: #D9c3ab;
 }
 
@@ -151,6 +157,28 @@ button {
 
 button:hover {
     box-shadow: 0 0 25px #A64253;
+}
+
+.response-message
+ {
+  margin-top: 15px;
+  padding: 12px 20px;
+  border-radius: 5px;
+  font-family: 'Fira Code', monospace;
+  animation: fadeIn 0.3s ease forwards;
+  text-align: center;
+}
+
+.response-message {
+  background: rgba(0, 200, 150, 0.15);
+  border: 1px solid #00c896;
+  color: #d9c3ab;
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 
@@ -182,11 +210,11 @@ button:hover {
     .page-container {
         margin-left: 300px;
     }
-    
+
     h1 {
         font-size: 2.5rem;
-        
-       
+
+
     }
 
     .contact-form-container {
@@ -243,7 +271,7 @@ button:hover {
         margin-top: -5%;
     }
 
-   
+
 }
 
  /*ADD MEDIA QUERIES FOR Extra LARGE SCREENS AS NEEDED*/
@@ -253,32 +281,34 @@ export class ContactComponent {
     contact = new ContactFormModel();
     submitted = false;
     isSending = false;
+    message = '';
 
-    public async sendEmail(e: Event) {
+    sendEmail(e: Event) {
+
         e.preventDefault();
 
         const form = e.target as HTMLFormElement;
         this.isSending = true;
 
-        try {
-            // pass public key as string (4th argument) — not an options object
-            const result = await emailjs.sendForm(
+        emailjs.sendForm(
                 'service_z8s3vke',
                 'template_2gc7qfg',
                 form,
                 'wky16DxMZoLPlayR_'
-            ) as EmailJSResponseStatus;
+            ).then((response: EmailJSResponseStatus) => {
 
-            console.log('Email sent successfully:', result);
+            console.log('Email sent successfully:', response);
             this.submitted = true;
+            this.message = "Message delivered! I'll get back to you soon :)";
             // Optionally reset the form model
             this.contact = new ContactFormModel();
-        } catch (error) {
+
+        }, (error) => {
             console.error('Error sending email:', error);
+            this.message = 'An error occurred while sending your message. Please try again later.';
             // keep submitted = false so user can retry
-        } finally {
-            this.isSending = false;
-        }
+        });
+
     }
 
 }
