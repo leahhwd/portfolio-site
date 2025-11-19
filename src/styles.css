@@ -57,6 +57,11 @@ html, body {
     gap: 5px;
 }
 
+.nav__logo {
+  filter: drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.5));
+
+}
+
 .bar {
     width: 25px;
     height: 3px;
