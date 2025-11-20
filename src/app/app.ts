@@ -1,12 +1,13 @@
 import { Component, signal } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { transition, trigger, style, animate, query } from '@angular/animations';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, RouterLink],
+  imports: [RouterOutlet, RouterLink, RouterModule],
   template: `
   <div class='wrapper'>
     <main class='main-content'>
@@ -35,8 +36,8 @@ import { transition, trigger, style, animate, query } from '@angular/animations'
 
 
         <ul class='nav__list'>
-          <li class='nav__item'><a class='nav__link' [routerLink]="['/about']">01. About me</a></li>
-          <li class='nav__item'><a class='nav__link' [routerLink]="['/projects']">02. my Projects</a></li>
+          <li class='nav__item'><a class='nav__link' [routerLink]="['/about']" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">01. About me</a></li>
+          <li class='nav__item'><a class='nav__link' [routerLink]="['/projects']" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">02. my Projects</a></li>
           <li class='nav__item'><a class='nav__link nav__link--contact' [routerLink]="['/contact']">Contact</a></li>
         </ul>
 

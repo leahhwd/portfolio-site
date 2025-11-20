@@ -170,7 +170,7 @@ background-image: radial-gradient(142% 91% at 128% -2%, #a64253 1%, #FF000000 58
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
-        padding: 2rem 1rem;
+        padding: 2rem 0;
         position: fixed;
     }
 
@@ -182,7 +182,6 @@ background-image: radial-gradient(142% 91% at 128% -2%, #a64253 1%, #FF000000 58
         display: flex;
         flex-direction: column;
         position: static;
-        width: auto;
         background: none;
         font-size: 1.15rem;
         padding: 0;
@@ -190,8 +189,17 @@ background-image: radial-gradient(142% 91% at 128% -2%, #a64253 1%, #FF000000 58
 
     }
 
+    .nav__link {
+        padding-left: 15px;
+    }
+
+
+
+
+
     .nav__link--contact {
-    margin: 1rem auto;
+
+      margin-left: 20%;
     padding: 0.6rem 1.2rem;
     border: 2px solid #A64253;
     box-shadow: 0 0 15px #A64253;
@@ -206,6 +214,14 @@ background-image: radial-gradient(142% 91% at 128% -2%, #a64253 1%, #FF000000 58
 
     .nav__link:hover {
         color: #D9C3Ab;
+    }
+
+    .nav__link.active-link {
+      display: block;
+      background-color: #171412;
+      padding: 0.5rem 1rem;
+      color: #A64253;
+      transition: all 0.3s ease;
     }
 
     .social-icons {
