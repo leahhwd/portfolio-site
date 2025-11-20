@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, NgForm } from '@angular/forms';
 import { ContactFormModel } from '../models/contact-form.model';
@@ -10,7 +10,15 @@ import emailjs, {type EmailJSResponseStatus} from '@emailjs/browser';
   imports: [CommonModule, FormsModule],
   template: `
 <div class="page-container">
-       <h1>Let's Build Something Great!</h1>
+    <h1 class="headline"> Let's Build Something
+      <span class="glitch-container">
+        <span class="glitch">
+          <span aria-hidden="true">{{currentWord}}</span>
+            {{currentWord}}
+          <span aria-hidden="true">{{currentWord}}</span>
+        </span>
+      </span>
+    </h1>
 
 
     <div class="contact-form-container" animate.enter="slide-in">
@@ -56,13 +64,12 @@ import emailjs, {type EmailJSResponseStatus} from '@emailjs/browser';
 
     <button type="submit" [disabled]="!contactForm.form.valid || isSending">{{ isSending ? 'Sending...' : 'Submit' }}</button>
 
-
-
         </form>
 
         <div class="response-message" *ngIf="submitted">
-       {{message}}
-      </div>
+          {{message}}
+        </div>
+
     </div>
 </div>
   `,
@@ -81,9 +88,94 @@ import emailjs, {type EmailJSResponseStatus} from '@emailjs/browser';
     margin-top: 25%;
     font-size: 1.5rem;
     padding: 10px;
-    color: #d9c3ab;
+
+}
+.headline {
+  line-height: 1.2;
+  display: inline-block;
+  color: #D9c3ab;
 }
 
+.glitch-container {
+  display: block;
+  margin-top: 8px;
+  height: 1.2em;
+  position: relative;
+  overflow: hidden;
+}
+
+.glitch {
+  display: inline-block;
+  font-weight: bold;
+  position: relative;
+  color: #D9c3ab;
+  text-shadow:
+  0 0 2px #a64253,
+  0 0 2px #54642e;
+  animation: glitch-flicker 1s infinite steps( 1, end);
+}
+
+.glitch span {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.glitch span:first-child {
+  clip-path: inset(0 0 65% 0);
+  opacity: 0.6:
+  animation: glitchSliceTop 700ms infinite steps(1, end);
+  mix-blend-mode: lighten;
+}
+
+.glitch span:last-child {
+  clip-path: inset(50% 0 0 0);
+  animation: glitchSliceBottom 750ms infinite steps(1, end);
+  opacity: 0.6;
+  mix-blend-mode: lighten;
+}
+
+
+@keyframes glitch-flicker {
+  0% { opacity: 1; filter: none; }
+  5% { opacity: 0.2;  }
+  7% { opacity: 1; }
+  12% { opacity: 0;  }
+  13% { opacity: 1; }
+  20% { opacity: 0.1;  }
+  22% { opacity: 1; }
+  35% { opacity: 0.3; }
+  36% { opacity: 1; }
+  52% { opacity: 0.2; }
+  53% { opacity: 1; }
+  70% { opacity: 0; }
+  71% { opacity: 1; }
+  100% { opacity: 1; }
+}
+
+/* TOP SLICE POPPING */
+@keyframes glitchSliceTop {
+  0% { opacity: 0.6; }
+  8% { opacity: 0; }
+  10% { opacity: 0.7; }
+  25% { opacity: 0.3; }
+  27% { opacity: 0.8; }
+  60% { opacity: 0.25; }
+  61% { opacity: 0.7; }
+  100% { opacity: 0.6; }
+}
+
+/* BOTTOM SLICE POPPING */
+@keyframes glitchSliceBottom {
+  0% { opacity: 0.6; }
+  6% { opacity: 0.2; }
+  9% { opacity: 0.7; }
+  28% { opacity: 0.3; }
+  29% { opacity: 0.8; }
+  65% { opacity: 0.2; }
+  67% { opacity: 0.75; }
+  100% { opacity: 0.6; }
+}
 
 .contact-form-container {
     display: flex;
@@ -145,9 +237,8 @@ import emailjs, {type EmailJSResponseStatus} from '@emailjs/browser';
 }
 
 .form-group label {
-font-family: 'Fira Code', monospace;
+    font-family: 'Fira Code', monospace;
     margin-bottom: 0.5rem;
-
     color: #D9c3ab;
 }
 
@@ -202,12 +293,12 @@ button:hover {
 
 @media (min-width: 768px) {
     .page-container {
-        margin-top: -10%;
+        margin-top: -12%;
         margin-left: 215px;
     }
 
     h1 {
-        font-size: 2rem;
+        font-size: 2.5rem;
         padding: 0;
         }
     .contact-form-container {
@@ -222,6 +313,7 @@ button:hover {
 @media (min-width: 1024px) {
     .page-container {
         margin-left: 300px;
+        margin-top: -10%;
     }
 
     h1 {
@@ -295,7 +387,21 @@ export class ContactComponent {
     submitted = false;
     isSending = false;
     message = '';
+    words = ['great', 'cool', 'fun', 'awesome', 'useful']
+    currentWord = this.words[0];
+    private intervalId: any;
 
+    ngOnInit(): void {
+      let index = 0;
+      this.intervalId = setInterval(() => {
+        index = (index + 1) % this.words.length;
+        this.currentWord = this.words[index];
+      }, 2000); // Change word every 2 seconds
+    }
+
+    onDestroy(): void {
+      clearInterval(this.intervalId);
+    }
     sendEmail(e: Event) {
 
         e.preventDefault();

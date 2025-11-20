@@ -11,7 +11,9 @@ import { RouterLink } from '@angular/router';
       <header>
         <h1>Leah</h1>
         <h2>Marie Kathleen</h2>
-        <p>Full - Stack Web Developer</p>
+        <p>Full - Stack Web
+          <span aria-hidden="true" class="glitch">Developer</span>
+        </p>
       </header>
 
       <button class="about-link" [routerLink]="['/about']">About Me</button>
@@ -25,11 +27,36 @@ import { RouterLink } from '@angular/router';
     text-align: center;
   }
 
+  .glitch {
+    display: inline-block;
+    font-weight: bold;
+    position: relative;
+    color: #D9c3ab;
+  animation: glitch-flicker 1.25s infinite steps( 1, end);
+  }
+
+@keyframes glitch-flicker {
+  0% { opacity: 1; filter: none; }
+  5% { opacity: 0.2;  }
+  7% { opacity: 1; }
+  12% { opacity: 0;  }
+  13% { opacity: 1; }
+  20% { opacity: 0.1;  }
+  22% { opacity: 1; }
+  35% { opacity: 0.3; }
+  36% { opacity: 1; }
+  52% { opacity: 1; }
+  53% { opacity: 1; }
+  70% { opacity: 0; }
+  71% { opacity: 1; }
+  100% { opacity: 1; }
+}
+
   .slide-in {
-  transform: translateX(40px);
+    transform: translateX(40px);
     animation: slideIn 1.5s ease forwards;
     opacity: 0;
-}
+  }
 
 /*Slide in Animation*/
 @keyframes slideIn {
@@ -75,7 +102,6 @@ import { RouterLink } from '@angular/router';
   }
 
   button {
-
     margin: 1rem auto;
     padding: 0.6rem 1.2rem;
     border: 2px solid #A64253;
@@ -84,7 +110,7 @@ import { RouterLink } from '@angular/router';
     color: white;
     border-radius: 5px;
     cursor: pointer;
-    }
+  }
 
   .about-link {
     font-family: 'Fira Code', monospace;
@@ -94,7 +120,7 @@ import { RouterLink } from '@angular/router';
     margin: 20px;
     padding: 5px;
     text-transform: uppercase;
-}
+  }
 
 @media (min-width: 768px) {
 
@@ -117,11 +143,10 @@ import { RouterLink } from '@angular/router';
     align-items: flex-end;
     text-align: right;
     font-size: 1.5em;
-
-     margin-bottom: 0;
-     padding-right: 10px;
-
+    margin-bottom: 0;
+    padding-right: 10px;
   }
+
   h1 {
     font-weight: 600;
     padding-top: 0;
@@ -143,20 +168,19 @@ import { RouterLink } from '@angular/router';
 
   @media (min-width: 1024px) {
 
-
   header {
     font-size: 2em;
 
-    }
+  }
 
   h1 {
     -webkit-text-stroke: 3px black;
     text-shadow: 3.5px 3px 3px #a64253;
   }
-    p {
-    font-size: 1.5em;
 
-    }
+  p {
+    font-size: 1.5em;
+  }
 }
 
 @media (min-width: 1440px) {
@@ -173,7 +197,7 @@ import { RouterLink } from '@angular/router';
 
 @media (min-width: 2560px) {
 
-header {
+  header {
     font-size: 3em;
   }
 
