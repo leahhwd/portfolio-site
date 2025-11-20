@@ -17,15 +17,15 @@ import { RouterLink } from '@angular/router';
 
         <div class="lower-content">
 
-        <img src="images/portfolio-img-mobile.png" alt="About Image" class="about-image">
+          <img src="images/portfolio-img-mobile.png" alt="About Image" class="about-image">
 
-         <div class="lower-text-container">
-          <p class="lower-text">
-            I handle development, maintenance, and
-            content management systems formulated to fit your goals.
-          </p>
+          <div class="lower-text-container">
+            <p class="lower-text">
+              I handle development, maintenance, and
+              content management systems formulated to fit your goals.
+            </p>
 
-          <button class="project-link" [routerLink]="['/projects']">My Projects</button>
+            <button class="project-link" [routerLink]="['/projects']">My Projects</button>
 
           </div>
         </div>
@@ -34,28 +34,19 @@ import { RouterLink } from '@angular/router';
 
       <div class="content-desktop" animate.enter="slide-in">
         <div class="desktop-text-container">
-        <p>
-        With a background in full-stack web development,
-        I specialize in building modern, responsive websites that
-        balance clean design with powerful functionality. From custom
-        layouts and interactive features to secure integrations like
-        e-commerce and payment systems, I focus on creating solutions
-        that fit each client’s unique goals.
-        </p>
-
-        <p>I hold a bachelor’s degree in full-stack web development and
-        have hands-on experience with technologies like Angular, Node.js,
-        Express, and MongoDB. My services include website design,
-        development, ongoing maintenance, and custom content management
-        solutions, ensuring every project is built to grow and adapt
-        with your needs.
-        </p>
+          <p>
+            With a background in full-stack web development,
+            I specialize in building modern, responsive websites that
+            balance clean design with powerful functionality. From custom
+            layouts and interactive features to secure integrations like
+            e-commerce and payment systems, I focus on creating solutions
+            that fit each client’s unique goals.
+          </p>
         </div>
 
         <img src="images/portfolio-img-desktop.png" alt="About Image" class="about-image">
 
       </div>
-
     </main>
   `,
   styles: `
@@ -77,16 +68,17 @@ import { RouterLink } from '@angular/router';
 
   .slide-in {
     transform: translateX(40px);
-      animation: slideIn 1.5s ease forwards;
-      opacity: 0;
+    animation: slideIn 1.5s ease forwards;
+    opacity: 0;
   }
 
   @keyframes slideIn {
-  100% {
-    opacity: 1;
-    transform: translateX(0);
+
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
-}
 
   .upper-text {
     font-size: 1.25em;
@@ -95,7 +87,6 @@ import { RouterLink } from '@angular/router';
     font-weight: bold;
     color: #d9c3ab;
     padding: 10px;
-
   }
 
   .lower-content {
@@ -131,8 +122,8 @@ import { RouterLink } from '@angular/router';
 
   button.project-link {
     display: block;
-    margin: 1rem auto;
-    padding: 0.6rem 1.2rem;
+    margin-bottom: 10px;
+    padding: .5rem 1.2rem;
     border: 2px solid #A64253;
     background: transparent;
     border-radius: 10px;
@@ -151,8 +142,18 @@ import { RouterLink } from '@angular/router';
     display: none;
   }
 
-@media (min-width: 768px) {
-  .content-mobile {
+  @media (min-width: 425px) {
+    .upper-text {
+      padding: 0 15px;
+    }
+
+    .lower-content p {
+      margin-right: 30px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .content-mobile {
     display: none;
   }
 
@@ -161,7 +162,6 @@ import { RouterLink } from '@angular/router';
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    height: 100vh;
     padding-top: 0;
   }
 
@@ -175,15 +175,15 @@ import { RouterLink } from '@angular/router';
     display: flex;
     flex-direction: column;
     gap: 20px;
-    max-width: 50%;
-    padding-left: 225px;
+    max-width: 60%;
+    padding-left: 250px;
   }
 
   p {
-    font-size: 1em;
+    font-size: 1.05em;
     font-family: 'Fira Code', monospace;
     color: #d9c3ab;
-    line-height: 1.35;
+    line-height: 1.5;
     font-weight: 550;
     text-transform: uppercase;
     text-align: left;
@@ -195,25 +195,22 @@ import { RouterLink } from '@angular/router';
     height: 100vh;
     object-fit: cover;
   }
-
 }
 
 @media (min-width: 1024px) {
-
   p {
-    font-size: 1.2em;
+    font-size: 1.25em;
   }
 }
 
 @media (min-width: 1440px) {
-
   p {
-    font-size: 1.5em;
+    font-size: 2em;
+    padding-left: 50px;
   }
 }
 
 @media (min-width: 2560px) {
-
   .desktop-text-container {
     margin-left: 250px;
     max-width: 40%;
