@@ -7,7 +7,7 @@ import { RouterLink } from '@angular/router';
   standalone: true,
   imports: [RouterLink],
   template: `
-    <main>
+    <main animate.enter="slide-in">
       <header>
         <h1>Leah</h1>
         <h2>Marie Kathleen</h2>
@@ -24,6 +24,22 @@ import { RouterLink } from '@angular/router';
     justify-content: flex-end;
     text-align: center;
   }
+
+  .slide-in {
+  transform: translateX(40px);
+    animation: slideIn 1.5s ease forwards;
+    opacity: 0;
+}
+
+/*Slide in Animation*/
+@keyframes slideIn {
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
   header {
     margin-bottom: 5px;
   }

@@ -1,5 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
+import { transition, trigger, style, animate, query } from '@angular/animations';
 
 
 @Component({
@@ -56,7 +57,11 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 
     </main>
   </div>`,
-  styles: [``],
+  styles: [`
+
+
+
+  `],
 })
 export class App {
   protected readonly title = signal('my-portfolio');

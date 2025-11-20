@@ -9,10 +9,10 @@ import { ProjectService, Project } from '../services/project'; // Alias to avoid
   imports: [CommonModule],
   template: `
    <div class="wrapper"> <!-- Wrapper div for photo grid -->
-<h2>My Projects</h2>
+
        <!-- project container -->
         <div class="slide-in" >
-
+            <h2>My Projects</h2>
 
             <div class="active-project" *ngFor="let project of projects; let i = index">
 

@@ -8,7 +8,7 @@ import { RouterLink } from '@angular/router';
   template: `
     <main>
 
-      <div class="content-mobile">
+      <div class="content-mobile" animate.enter="slide-in">
         <p class="upper-text">
           Full-stack web developer creating modern,
           responsive websites with custom features, secure
@@ -32,7 +32,7 @@ import { RouterLink } from '@angular/router';
       </div>
 
 
-      <div class="content-desktop">
+      <div class="content-desktop" animate.enter="slide-in">
         <div class="desktop-text-container">
         <p>
         With a background in full-stack web development,
@@ -74,6 +74,19 @@ import { RouterLink } from '@angular/router';
     align-items: center;
     text-align: center;
   }
+
+  .slide-in {
+    transform: translateX(40px);
+      animation: slideIn 1.5s ease forwards;
+      opacity: 0;
+  }
+
+  @keyframes slideIn {
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 
   .upper-text {
     font-size: 1.25em;

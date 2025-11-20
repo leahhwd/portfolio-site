@@ -13,7 +13,7 @@ import emailjs, {type EmailJSResponseStatus} from '@emailjs/browser';
        <h1>Let's Build Something Great!</h1>
 
 
-    <div class="contact-form-container">
+    <div class="contact-form-container" animate.enter="slide-in">
 
         <form #contactForm="ngForm" (ngSubmit)="sendEmail($event)" *ngIf="!submitted">
 
@@ -97,6 +97,19 @@ import emailjs, {type EmailJSResponseStatus} from '@emailjs/browser';
     box-shadow: 0 0 15px #A64253;
     border-radius: 10px;
     background-color: transparent;
+}
+
+.slide-in {
+  opacity: 0;
+  transform: translateX(40px);
+  animation: slideIn 1.5s ease forwards;
+}
+
+@keyframes slideIn {
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .contact-form-container:hover {
