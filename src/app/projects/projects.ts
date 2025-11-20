@@ -8,11 +8,12 @@ import { ProjectService, Project } from '../services/project'; // Alias to avoid
   standalone: true,
   imports: [CommonModule],
   template: `
-   <div class="wrapper"> <!-- Wrapper div for photo grid -->
+  <div class="wrapper"> <!-- Wrapper div for photo grid -->
 
        <!-- project container -->
         <div class="slide-in" >
-            <h2>My Projects</h2>
+
+            <h2 class="page-title">My Projects</h2>
 
             <div class="active-project" *ngFor="let project of projects; let i = index">
 
@@ -22,16 +23,22 @@ import { ProjectService, Project } from '../services/project'; // Alias to avoid
 
 
 
-              <div class="project-info-overlay" [class.show]="activeIndex === i"> <!-- Project info section -->
+                <div class="project-info-overlay" [class.show]="activeIndex === i"> <!-- Project info section -->
 
-                <h2>{{ project.title }}</h2>
-                <p>{{ project.description }}</p>
+                  <h2>{{ project.title }}</h2>
+                  <p>{{ project.description }}</p>
 
-              </div>
+                  <button class="project-link">
+                    Check it out
+                  </button>
+
+                </div>
 
             </div>
-</div>
-</div>
+
+        </div>
+
+    </div>
 
   `,
   styles: `
@@ -40,7 +47,6 @@ import { ProjectService, Project } from '../services/project'; // Alias to avoid
     display: flex;
     flex-direction: column;
     align-items: center;
-
 }
 
 h2 {
@@ -54,8 +60,8 @@ h2 {
 
 .slide-in {
   transform: translateX(40px);
-    animation: slideIn 1.5s ease forwards;
-    opacity: 0;
+  animation: slideIn 1.5s ease forwards;
+  opacity: 0;
 }
 
 .active-project {
@@ -66,22 +72,21 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 auto;
+  margin: 10px auto;
 }
 
 .active-project img {
   width: 100%;
   height: auto;
   display: block;
- object-fit: cover;
- margin: 10px 0;
+  object-fit: cover;
+  margin: 10px 0;
   transition: transform 0.3s ease;
-
+  filter: drop-shadow(0 0 18px rgba(255, 255, 255, 0.22));
 }
 
 .active-project:hover img {
   transform: scale(1.05);
-
 }
 
 .project-info-overlay {
@@ -90,17 +95,21 @@ h2 {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.7);
-  color: #fff;
+  background: rgba(0, 0, 0, 0.5);
+  color: #a64253;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   text-align: center;
   opacity: 0;
   transition: opacity 0.3s ease;
   z-index: 2;
+}
 
+.project-info-overlay p {
+  background: black;
+  font-family: 'Fira Code', monospace;
+  padding: 10px;
 }
 
 /*desktop hover*/
@@ -123,52 +132,78 @@ h2 {
   }
 }
 
+button.project-link {
+    display: block;
+    margin: 1rem auto;
+    padding: 1rem 1.2rem;
+    border: 2px solid #A64253;
+    background: transparent;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #A64253;
+    cursor: pointer;
+}
+
+.project-link {
+    font-family: 'Fira Code', monospace;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 1rem;
+    color: #D9c3ab;
+}
+
 
 @media (min-width: 768px) {
-
   .slide-in {
-    margin-left: 220px;
-
+    padding-left: 220px;
+    box-sizing: border-box;
   }
+
+  .project-info-overlay {
+    justify-content: center;
+  }
+
 
   h2 {
     margin-top: 5%;
-    margin-left: 220px;
   }
 }
 
 @media (min-width: 1024px) {
   .wrapper {
-
-  /*display: grid;
-  gap: 10px;
-  grid-template-columns: repeat(3, 1fr);
-  width: 100%;*/
-
-}
-
-.slide-in {
-  display: grid;
-  gap: 10px;
-  grid-template-columns: repeat(2, .75fr);
-
-}
-
-.active-project {
     width: 100%;
-    max-width: 500px;
-    margin-left: 100px;
+    align-items
   }
 
-
-.active-project img {
-    width: 100%;
-    max-width: 300px;
-
+  .page-title {
+    display: none;
   }
 
+  .slide-in {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(2, 1fr);
+    box-sizing: border-box;
+  }
+
+  .active-project {
+    margin-top: 10%;
+  }
+
+  .active-project img {
+    width: 100%;
+    height: auto;
+  }
 }
 
+@media (min-width: 1440px) {
+  h2 {
+    font-size: 3em;
+  }
+
+  p {
+    font-size: 1.5em;
+  }
+}
 
 
 `
@@ -185,12 +220,11 @@ export class ProjectsComponent implements OnInit {
     this.projects = this.projectService.getProjects();
   }
 
-setActive(index: number) {
-  this.activeIndex = index;
-}
+  setActive(index: number) {
+    this.activeIndex = index;
+    }
 
-clearActive() {
-  this.activeIndex = null;
-}
-
+  clearActive() {
+    this.activeIndex = null;
+  }
 }
