@@ -171,7 +171,6 @@ button.project-link {
 @media (min-width: 1024px) {
   .wrapper {
     width: 100%;
-    align-items
   }
 
   .page-title {
