@@ -8,15 +8,75 @@ import { RouterLink } from '@angular/router';
   imports: [RouterLink],
   template: `
     <main animate.enter="slide-in">
-      <header>
-        <h1>Leah</h1>
-        <h2>Marie Kathleen</h2>
-        <p>Full - Stack Web
-          <span aria-hidden="true" class="glitch">Developer</span>
-        </p>
-      </header>
 
-      <button class="about-link" [routerLink]="['/about']">About Me</button>
+      <section class="hero">
+        <!-- Left side content -->
+        <div class="hero-content">
+
+          <p class="header-intro">Hi, I'm</p>
+
+          <h1 class="header-name-bold">LEAH</h1>
+          <h2 class="header-name-light">Marie Kathleen</h2>
+
+          <p class="title">Full-Stack Developer</p>
+
+          <div class="divider"></div>
+          <!--reduce? -->
+          <p class="description">I create dynamic and responsive web applications that provide seamless user experiences. With a strong foundation in both front-end and back-end technologies, I am passionate about crafting efficient and scalable solutions.</p>
+
+          <div class="cta-buttons">
+            <a routerLink="/projects" class="projects-link">VIEW MY WORK</a>
+            <a routerLink="/about" class="about-link">ABOUT ME</a>
+          </div>
+        </div>
+        <!-- Left side content end -->
+
+        <!-- Right side visual content -->
+         <div class="hero-visual">
+          <!-- Placeholder for visual content, e.g., an image or animation -->
+           <div class="code-card">
+            <div class="dots">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+
+            <div class="code-lines">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+        </div>
+        <!--Right side visual content end-->
+      </section>
+
+      <!--Featured Information section-->
+      <section class="featured-info">
+        <!--Add html icon codes here for each feature, and add text descriptions-->
+        <div class="feature">
+          <h4>&lt;/&gt; CLEAN CODE</h4>
+          <p>Clean and efficient code for scalable applications.</p>
+        </div>
+
+        <div class="feature">
+          <h4>&lt;div&gt; RESPONSIVE DESIGN</h4>
+          <p>Responsive design that works on all devices.</p>
+        </div>
+
+        <div class="feature">
+          <h4>&lt;script&gt; PERFORMANCE OPTIMIZATION</h4>
+          <p>Optimized performance for fast-loading applications.</p>
+        </div>
+
+        <div class="feature">
+          <h4>&lt;style&gt; MODERN UI/UX</h4>
+          <p>Contemporary user interface and experience design.</p>
+        </div>
+
+      </section>
     </main>
   `,
   styles: `
