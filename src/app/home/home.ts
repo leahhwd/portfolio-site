@@ -137,7 +137,7 @@ import { RouterLink } from '@angular/router';
 
   }
 
-  header { /*addpadding*/
+  header { /*add padding*/
     display: flex;
     flex-direction: column;
     align-items: flex-end;
