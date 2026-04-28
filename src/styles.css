@@ -5,9 +5,12 @@
 /* Fira Code for code blocks, Inter Tight for general text */
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
 
+/*Updated font styles*/
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Great+Vibes&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 
 /*Global Reset*/
-body, header, nav, main, section, footer, img, figure, figcaption {
+body, header, nav, main, section, footer, img, figure, figcaption, h1, h2, h3, h4, h5, h6, p, ul, ol, li {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
