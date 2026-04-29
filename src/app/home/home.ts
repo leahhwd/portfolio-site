@@ -25,30 +25,19 @@ import { RouterLink } from '@angular/router';
           <p class="description">I create dynamic and responsive web applications that provide seamless user experiences. With a strong foundation in both front-end and back-end technologies, I am passionate about crafting efficient and scalable solutions.</p>
 
           <div class="cta-buttons">
-            <a routerLink="/projects" class="projects-link">VIEW MY WORK</a>
+            <a routerLink="/projects" class="projects-link">VIEW MY WORK →</a>
             <a routerLink="/about" class="about-link">ABOUT ME</a>
+          </div>
+
+          <div class="laptop-image-wrap">
+            <img class="laptop-image" src="images/laptop-vector.png" alt="Laptop illustration" />
           </div>
         </div>
         <!-- Left side content end -->
 
         <!-- Right side visual content -->
          <div class="hero-visual">
-          <!-- Placeholder for visual content, e.g., an image or animation -->
-           <div class="code-card">
-            <div class="dots">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-
-            <div class="code-lines">
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
-          </div>
+          <!-- Placeholder for future visual content -->
         </div>
         <!--Right side visual content end-->
       </section>
@@ -123,7 +112,7 @@ justify-content: flex-start;
 
 .header-intro {
   font-family: 'Fira Code', sans-serif;
-  padding-top: 100px;
+  padding-top: 120px;
   letter-spacing: 2.5px;
   font-size: 1.5rem;
   color: #d45c73;
@@ -134,31 +123,117 @@ justify-content: flex-start;
   font-family: 'Bebas Neue', sans-serif;
   font-size: 7rem;
   letter-spacing: 6px;
-  border: 1px red solid;
+
 
 }
 
 .header-name-light {
   font-family: 'Great Vibes', cursive;
   font-size: 2rem;
-  margin-top: -25px;
+  margin-top: -50px;
   letter-spacing: 2px;
   color: #d45c73;
 }
 
 .title {
   margin-top: 20px;
-  font-family: 'Inter', sans-serif;
-  font-size: 1.5rem;
+  font-family: 'Fira Code', sans-serif;
+  font-size: .90rem;
+  font-weight: bold;
   letter-spacing: 2px;
 
 }
+
+.description {
+  margin-top: 30px;
+  max-width: 500px;
+  font-family: 'Fira Code', sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.divider {
+  width: 50px;
+  height: 3px;
+  background-color: #d45c73;
+  margin: 30px 0;
+}
+
+.cta-buttons {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  padding-top: 25px;
+  margin-right: 10px;
+  text-decoration: none;
+  font-family: 'Fira Code', sans-serif;
+  transition: all 0.3s ease;
+
+}
+
+.cta-buttons a {
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  text-decoration: none;
+  font-family: 'Fira Code', sans-serif;
+  transition: all 0.3s ease;
+
+}
+
+.projects-link {
+  border: 2px solid #d45c73;
+  color: #d45c73;
+  border-radius: 10px;
+
+}
+
+.projects-link:hover {
+  background-color: #d45c73;
+  color: #0b0b0b;
+}
+
+.about-link {
+  border: 2px solid #6b7d3a;
+
+  color: #6b7d3a;
+  border-radius: 10px;
+}
+
+.laptop-image-wrap {
+  margin-top: 18px;
+  max-width: 460px;
+  width: 100%;
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.laptop-image {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  filter: drop-shadow(0 0 5px #d45c73);
+}
+
 
 @media (max-width: 768px) {
   main {
     padding: 0;
   }
 }
+
+/*@media (min-width: 769px) {
+  .hero-content {
+    width: 100%;
+    max-width: 650px;
+  }
+
+  .laptop-image-wrap {
+    max-width: 460px;
+    margin-left: 0;
+    margin-right: auto;
+  }
+}*/
 
   `
 })
