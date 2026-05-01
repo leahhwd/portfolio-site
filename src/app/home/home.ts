@@ -31,6 +31,8 @@ import { RouterLink } from '@angular/router';
 
           <div class="laptop-image-wrap">
             <img class="laptop-image" src="images/laptop-vector.png" alt="Laptop illustration" />
+
+
           </div>
         </div>
         <!-- Left side content end -->
@@ -46,23 +48,41 @@ import { RouterLink } from '@angular/router';
       <section class="featured-info">
         <!--Add html icon codes here for each feature, and add text descriptions-->
         <div class="feature">
-          <h4>&lt;/&gt; CLEAN CODE</h4>
-          <p>Clean and efficient code for scalable applications.</p>
+          <img src="images/code.svg" alt="Code Icon" width="40" height="40">
+          <div class="feature-content">
+            <h4>CLEAN CODE</h4>
+            <p>Clean and efficient code for scalable applications.</p>
+          </div>
         </div>
 
-        <div class="feature">
-          <h4>&lt;div&gt; RESPONSIVE DESIGN</h4>
-          <p>Responsive design that works on all devices.</p>
-        </div>
+        <div class="feature-divider"></div>
 
         <div class="feature">
-          <h4>&lt;script&gt; PERFORMANCE OPTIMIZATION</h4>
-          <p>Optimized performance for fast-loading applications.</p>
+          <img src="images/storage.svg" class="featured-icon" alt="Stack Icon" width="40" height="40">
+          <div class="feature-content">
+            <h4>Full-Stack</h4>
+            <p>Responsive design that works on all devices.</p>
+          </div>
         </div>
 
+        <div class="feature-divider"></div>
+
         <div class="feature">
-          <h4>&lt;style&gt; MODERN UI/UX</h4>
-          <p>Contemporary user interface and experience design.</p>
+          <img src="images/rocket.svg" alt="rocket icon" class="featered-icon" width="40" height="40">
+          <div class="feature-content">
+            <h4>PERFORMANCE OPTIMIZATION</h4>
+            <p>Optimized performance for fast-loading applications.</p>
+          </div>
+        </div>
+
+        <div class="feature-divider"></div>
+
+        <div class="feature">
+          <img src="images/person.svg" alt="person icon" class="featered-icon" width="40" height="40">
+          <div class="feature-content">
+            <h4>User Focused</h4>
+            <p>Contemporary user interface and experience design.</p>
+          </div>
         </div>
 
       </section>
@@ -100,13 +120,9 @@ justify-content: flex-start;
   align-items: center;
   padding: 0px 45px;
   min-height: 100vh;
-  background: radial-gradient(
-    circle at 75% 25%,
-    rgba(212, 92, 115, 0.15),
-    transparent 40%
-  ),
-  #0b0b0b;
-  color: #e6d3b3;
+  
+  
+  
 
 }
 
@@ -121,15 +137,14 @@ justify-content: flex-start;
 
 .header-name-bold {
   font-family: 'Bebas Neue', sans-serif;
+  color: #e6d3b3;
   font-size: 7rem;
-  letter-spacing: 6px;
-
-
+  letter-spacing: 15px;
 }
 
 .header-name-light {
-  font-family: 'Great Vibes', cursive;
-  font-size: 2rem;
+  font-family: 'Allura', cursive;
+  font-size: 2.25rem;
   margin-top: -50px;
   letter-spacing: 2px;
   color: #d45c73;
@@ -141,6 +156,7 @@ justify-content: flex-start;
   font-size: .90rem;
   font-weight: bold;
   letter-spacing: 2px;
+  color: #e6d3b3;
 
 }
 
@@ -150,6 +166,7 @@ justify-content: flex-start;
   font-family: 'Fira Code', sans-serif;
   font-size: 1rem;
   line-height: 1.5;
+  color: #e6d3b3;
 }
 
 .divider {
@@ -172,6 +189,7 @@ justify-content: flex-start;
 }
 
 .cta-buttons a {
+
   padding: 12px 15px;
   margin-bottom: 15px;
   text-decoration: none;
@@ -184,6 +202,7 @@ justify-content: flex-start;
   border: 2px solid #d45c73;
   color: #d45c73;
   border-radius: 10px;
+
 
 }
 
@@ -200,7 +219,6 @@ justify-content: flex-start;
 }
 
 .laptop-image-wrap {
-  margin-top: 18px;
   max-width: 460px;
   width: 100%;
   margin-left: 0;
@@ -213,27 +231,95 @@ justify-content: flex-start;
   max-width: 420px;
   height: auto;
   filter: drop-shadow(0 0 5px #d45c73);
+
+}
+
+.featured-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+padding: 0px 20px;
+}
+
+.feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 15px;
+  text-align: left;
+  width: min(100%, 440px);
+}
+
+.feature-content {
+  flex: 1;
+}
+
+.feature img {
+  flex-shrink: 0;
+}
+
+.feature h4 {
+  color: #e6d3b3;
+  font-size: 1rem;
+  font-family: 'Fira Code', sans-serif;
+  margin: 0;
+}
+
+.feature p {
+  color: #e6d3b3;
+  font-size: .85rem;
+  font-family: 'Fira Code', sans-serif;
+  padding-top: 10px;
+  margin: 0;
+}
+
+.feature-divider {
+  width: 95%;
+  height: 1px;
+  background-color: #6b7d3a;
+  opacity: 0.8;
+  margin: 10px 0;
 }
 
 
-@media (max-width: 768px) {
-  main {
-    padding: 0;
-  }
+@media(min-width: 768px) {
+.hero {
+  padding-left: 250px;
+ 
 }
 
-/*@media (min-width: 769px) {
-  .hero-content {
-    width: 100%;
-    max-width: 650px;
-  }
+.header-intro {
+  padding-top: 50px;
+}
 
-  .laptop-image-wrap {
-    max-width: 460px;
-    margin-left: 0;
-    margin-right: auto;
-  }
-}*/
+.header-name-bold {
+  font-size: 11em;
+}
+
+.header-name-light {
+  font-size: 4em;
+  margin-top: -80px;
+  padding-left: 30px;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.cta-buttons {
+  width: 50%;
+}
+
+.featured-info {
+  padding-left: 200px;
+}
+}
+
+@media(min-width: 1024px) {
+ 
+}
 
   `
 })
