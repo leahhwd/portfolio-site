@@ -320,11 +320,13 @@ main {
 .hero {
   flex: 1;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  gap: 40px;
+  gap: clamp(40px, 6vw, 88px);
   min-height: 0;
   padding: 70px 45px 40px 250px;
+  width: min(100%, 1320px);
+  margin: 0 auto;
 }
 
 .hero-content {
