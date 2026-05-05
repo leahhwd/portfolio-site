@@ -28,18 +28,14 @@ import { RouterLink } from '@angular/router';
             <a routerLink="/projects" class="projects-link">VIEW MY WORK →</a>
             <a routerLink="/about" class="about-link">ABOUT ME</a>
           </div>
-
-          <div class="laptop-image-wrap">
-            <img class="laptop-image" src="images/laptop-vector.png" alt="Laptop illustration" />
-
-
-          </div>
         </div>
         <!-- Left side content end -->
 
         <!-- Right side visual content -->
          <div class="hero-visual">
-          <!-- Placeholder for future visual content -->
+          <div class="laptop-image-wrap">
+            <img class="laptop-image" src="images/laptop-vector.png" alt="Laptop illustration" />
+          </div>
         </div>
         <!--Right side visual content end-->
       </section>
@@ -68,7 +64,7 @@ import { RouterLink } from '@angular/router';
         <div class="feature-divider"></div>
 
         <div class="feature">
-          <img src="images/rocket.svg" alt="rocket icon" class="featered-icon" width="40" height="40">
+          <img src="images/rocket.svg" alt="rocket icon" class="featured-icon" width="40" height="40">
           <div class="feature-content">
             <h4>PERFORMANCE OPTIMIZATION</h4>
             <p>Optimized performance for fast-loading applications.</p>
@@ -78,7 +74,7 @@ import { RouterLink } from '@angular/router';
         <div class="feature-divider"></div>
 
         <div class="feature">
-          <img src="images/person.svg" alt="person icon" class="featered-icon" width="40" height="40">
+          <img src="images/person.svg" alt="person icon" class="featured-icon" width="40" height="40">
           <div class="feature-content">
             <h4>User Focused</h4>
             <p>Contemporary user interface and experience design.</p>
@@ -116,14 +112,11 @@ main {
 /*Hero section styles*/
 .hero {
   display: flex;
-justify-content: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
   padding: 0px 45px;
   min-height: 100vh;
-  
-  
-  
-
 }
 
 .header-intro {
@@ -238,7 +231,7 @@ justify-content: flex-start;
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+
 padding: 0px 20px;
 }
 
@@ -286,7 +279,7 @@ padding: 0px 20px;
 @media(min-width: 768px) {
 .hero {
   padding-left: 250px;
- 
+
 }
 
 .header-intro {
@@ -318,7 +311,75 @@ padding: 0px 20px;
 }
 
 @media(min-width: 1024px) {
- 
+main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.hero {
+  flex: 1;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  min-height: 0;
+  padding: 70px 45px 40px 250px;
+}
+
+.hero-content {
+  flex: 1 1 0;
+  max-width: 560px;
+}
+
+.header-name-bold {
+  font-size: clamp(7rem, 11vw, 11em);
+}
+
+.header-intro {
+  padding-top: 0;
+}
+
+.hero-visual {
+  flex: 0 1 42%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  min-width: 280px;
+}
+
+.laptop-image-wrap {
+  max-width: clamp(280px, 34vw, 500px);
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.laptop-image {
+  max-width: clamp(280px, 34vw, 500px);
+}
+
+.featured-info {
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 0;
+  padding: 24px 45px 32px 245px;
+}
+
+.feature {
+  flex: 1;
+  width: auto;
+  max-width: none;
+  padding: 0 20px;
+}
+
+.feature-divider {
+  width: 1px;
+  height: auto;
+  min-height: 85px;
+  margin: 0;
+  align-self: stretch;
+}
 }
 
   `
