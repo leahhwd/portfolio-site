@@ -18,8 +18,8 @@
       "ES2022",
       "DOM"
     ],
-    "moduleResolution": "Node",
-    "baseUrl": "./"
+    "moduleResolution": "bundler",
+
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
