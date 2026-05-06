@@ -21,4 +21,11 @@ describe('About', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should have a link to the projects page', () => {
+    const compiled = fixture.nativeElement as HTMLElement;
+    const link = compiled.querySelector('button');
+    expect(link).toBeTruthy();
+    expect(link?.textContent).toBe('My Projects');
+  });
 });

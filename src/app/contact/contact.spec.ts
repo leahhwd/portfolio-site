@@ -20,4 +20,18 @@ describe('Contact', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should submit the form', () => {
+    const event = new Event('submit');
+    spyOn(component, 'sendEmail');
+    component.sendEmail(event);
+    expect(component.sendEmail).toHaveBeenCalledWith(event);
+  });
+
+  it('should call sendEmail on form submission', () => {
+    spyOn(component, 'sendEmail');
+    const form = fixture.nativeElement.querySelector('form');
+    form.dispatchEvent(new Event('submit'));
+    expect(component.sendEmail).toHaveBeenCalled();
+  });
 });
