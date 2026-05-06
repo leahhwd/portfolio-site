@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, OnInit } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { RouterModule } from '@angular/router';
 import { transition, trigger, style, animate, query } from '@angular/animations';
@@ -10,6 +10,7 @@ import { transition, trigger, style, animate, query } from '@angular/animations'
   imports: [RouterOutlet, RouterLink, RouterModule],
   template: `
   <div class='wrapper'>
+    <div class="cursor-glow"></div>
     <main class='main-content'>
 
       <nav class='nav-bar'>
@@ -64,10 +65,25 @@ import { transition, trigger, style, animate, query } from '@angular/animations'
 
   `],
 })
-export class App {
+export class App implements OnInit {
   protected readonly title = signal('my-portfolio');
 
   mobileNavOpen = false;
+
+  ngOnInit(): void {
+    const glow = document.querySelector('.cursor-glow') as HTMLElement;
+
+    if (!glow) {
+      return;
+    }
+
+    document.addEventListener('mousemove', (e) => {
+      const x = e.clientX;
+      const y = e.clientY;
+      glow.style.left = `${x}px`;
+      glow.style.top = `${y}px`;
+    });
+  }
 
   toggleMobileNav(): void {
     this.mobileNavOpen = !this.mobileNavOpen;
@@ -76,5 +92,7 @@ export class App {
   closeMobileNav(): void {
     this.mobileNavOpen = false;
   }
+
+
 
 }
