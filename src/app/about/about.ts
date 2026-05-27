@@ -182,7 +182,7 @@ import { RouterLink } from '@angular/router';
     flex-direction: column;
     gap: 20px;
     max-width: 60%;
-    padding-left: 250px;
+
   }
 
   p {

@@ -52,9 +52,7 @@ border: 4px solid red;
     }
 
     @media (min-width: 768px) {
-      .not-found-container {
-        margin-left: 250px;
-      }
+
       .not-found-title {
         font-size: 5rem;
       }

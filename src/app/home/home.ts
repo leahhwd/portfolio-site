@@ -279,10 +279,7 @@ padding: 0px 20px;
 
 
 @media(min-width: 768px) {
-.hero {
-  padding-left: 250px;
 
-}
 
 .header-intro {
   padding-top: 50px;
@@ -307,9 +304,7 @@ padding: 0px 20px;
   width: 50%;
 }
 
-.featured-info {
-  padding-left: 200px;
-}
+
 }
 
 @media(min-width: 1024px) {
@@ -326,7 +321,7 @@ main {
   align-items: center;
   gap: clamp(40px, 6vw, 88px);
   min-height: 0;
-  padding: 70px 45px 40px 250px;
+
   width: min(100%, 1320px);
   margin: 0 auto;
 }
@@ -367,7 +362,7 @@ main {
   align-items: stretch;
   justify-content: space-between;
   gap: 0;
-  padding: 24px 45px 32px 245px;
+  padding: 24px 45px 32px;
 }
 
 .feature {

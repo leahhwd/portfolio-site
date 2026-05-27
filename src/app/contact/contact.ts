@@ -294,7 +294,7 @@ button:hover {
 @media (min-width: 768px) {
     .page-container {
         margin-top: -12%;
-        margin-left: 215px;
+
     }
 
     h1 {
@@ -312,7 +312,7 @@ button:hover {
 
 @media (min-width: 1024px) {
     .page-container {
-        margin-left: 300px;
+
         margin-top: -10%;
     }
 

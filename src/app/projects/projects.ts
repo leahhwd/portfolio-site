@@ -154,7 +154,6 @@ button.project-link {
 
 @media (min-width: 768px) {
   .slide-in {
-    padding-left: 220px;
     box-sizing: border-box;
   }
 
