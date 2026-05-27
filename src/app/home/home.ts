@@ -195,6 +195,7 @@ main {
   border: 2px solid #d45c73;
   color: #d45c73;
   border-radius: 10px;
+  box-shadow: 0 0 20px #A64253;
 
 
 }
@@ -208,6 +209,7 @@ main {
   border: 2px solid #6b7d3a;
 
   color: #6b7d3a;
+  box-shadow: 0 0 20px #6b7d3a;
   border-radius: 10px;
 }
 

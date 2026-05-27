@@ -84,7 +84,7 @@ import { RouterLink } from '@angular/router';
     font-size: 1.25em;
     font-family: 'Fira Code', monospace;
     max-width: 100%;
-    font-weight: bold;
+    font-weight: thin;
     color: #d9c3ab;
     padding: 10px;
   }
@@ -107,7 +107,7 @@ import { RouterLink } from '@angular/router';
 
   .lower-text {
     font-size: 1.25em;
-    font-weight: bold;
+    font-weight: thin;
     font-family: 'Fira Code', monospace;
     color: #d9c3ab;
     margin-right: 20px;
@@ -135,7 +135,13 @@ import { RouterLink } from '@angular/router';
     text-transform: uppercase;
     font-weight: 400;
     font-size: 1rem;
-    color: #D9c3ab;
+    color: #A64253;
+  }
+
+  .project-link:hover {
+    background: #A64253;
+    color: white;
+    transition: background 0.3s ease, color 0.3s ease;
   }
 
   .content-desktop {
@@ -184,7 +190,6 @@ import { RouterLink } from '@angular/router';
     font-family: 'Fira Code', monospace;
     color: #d9c3ab;
     line-height: 1.5;
-    font-weight: 550;
     text-transform: uppercase;
     text-align: left;
   }
