@@ -92,7 +92,7 @@ html, body {
     align-items: center;
     padding: 1rem 2rem;
     background-color: #54642E;
-    position: fixed;
+
     z-index: 100;
 }
 
