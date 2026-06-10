@@ -51,7 +51,7 @@ import { ProjectService, Project } from '../services/project'; // Alias to avoid
 
 h2 {
   text-align: center;
-  margin-top: 120px;
+  margin-top: 50px;
   margin-bottom: 20px;
   font-family: 'Fira Code', monospace;
   text-transform: uppercase;

@@ -13,10 +13,15 @@
 
 
 /*Global Reset*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body, header, nav, main, section, footer, img, figure, figcaption, h1, h2, h3, h4, h5, h6, p, ul, ol, li {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 /* {
@@ -30,6 +35,16 @@ html, body {
 
 
 }
+
+app-root,
+router-outlet + * {
+    display: block;
+}
+
+router-outlet + * {
+    width: 100%;
+}
+
  /* mobile first approach */
 .wrapper {
     display: flex;

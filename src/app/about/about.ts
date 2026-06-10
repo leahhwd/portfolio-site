@@ -55,8 +55,8 @@ import { RouterLink } from '@angular/router';
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    height: 100vh;
-    padding-top: 30%;
+    min-height: 100vh;
+    padding-top: 20px;
     }
 
   .content-mobile {
@@ -64,6 +64,7 @@ import { RouterLink } from '@angular/router';
     flex-direction: column;
     align-items: center;
     text-align: center;
+
   }
 
   .slide-in {
@@ -94,6 +95,7 @@ import { RouterLink } from '@angular/router';
     flex-direction: row;
     justify-content: flex-end;
     width: 100%;
+
   }
 
   .lower-text-container {
@@ -118,6 +120,7 @@ import { RouterLink } from '@angular/router';
     max-width: 60%;
     height: 60vh;
     object-fit: cover;
+
   }
 
   button.project-link {
@@ -129,6 +132,7 @@ import { RouterLink } from '@angular/router';
     border-radius: 10px;
     box-shadow: 0 0 20px #A64253;
     cursor: pointer;
+
   }
     .project-link {
     font-family: 'Fira Code', monospace;

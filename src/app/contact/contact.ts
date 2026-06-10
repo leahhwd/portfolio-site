@@ -77,7 +77,6 @@ import emailjs, {type EmailJSResponseStatus} from '@emailjs/browser';
   .page-container {
     display: flex;
     flex-direction: column;
-    margin-top: 10%;
     margin-bottom: 10%;
     padding: 0 5px;
 }
@@ -85,7 +84,7 @@ import emailjs, {type EmailJSResponseStatus} from '@emailjs/browser';
     text-align: center;
     text-transform: uppercase;
     font-family: 'Inter Tight', sans-serif;
-    margin-top: 25%;
+    margin-top: 10%;
     font-size: 1.5rem;
     padding: 10px;
 
@@ -292,10 +291,7 @@ button:hover {
 }
 
 @media (min-width: 768px) {
-    .page-container {
-        margin-top: -12%;
 
-    }
 
     h1 {
         font-size: 2.5rem;
@@ -311,15 +307,10 @@ button:hover {
 }
 
 @media (min-width: 1024px) {
-    .page-container {
 
-        margin-top: -10%;
-    }
 
     h1 {
         font-size: 2.5rem;
-
-
     }
 
     .contact-form-container {
@@ -335,12 +326,7 @@ button:hover {
     }
 }
 
-@media (min-width: 1400px) {
-    .page-container {
-        margin-left: 500px;
-        margin-top: -5%;
-    }
-}
+
 
 @media (min-width: 1600px) {
     .page-container {

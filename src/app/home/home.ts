@@ -121,7 +121,7 @@ main {
 
 .header-intro {
   font-family: 'Fira Code', sans-serif;
-  padding-top: 120px;
+  padding-top: 40px;
   letter-spacing: 2.5px;
   font-size: 1.5rem;
   color: #d45c73;
@@ -332,11 +332,13 @@ main {
 }
 
 .header-name-bold {
-  font-size: clamp(7rem, 11vw, 11em);
+  font-size: 11em;
 }
 
-.header-intro {
-  padding-top: 0;
+.header-name-light {
+  font-size: 3em;
+  margin-top: -80px;
+  padding-left: 30px;
 }
 
 .hero-visual {
