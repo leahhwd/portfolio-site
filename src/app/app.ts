@@ -77,12 +77,29 @@ export class App implements OnInit {
       return;
     }
 
-    document.addEventListener('mousemove', (e) => {
-      const x = e.clientX;
-      const y = e.clientY;
-      glow.style.left = `${x}px`;
-      glow.style.top = `${y}px`;
-    });
+    
+      let mouseX = window.innerWidth / 2;
+      let mouseY = window.innerHeight / 2;
+
+      let currentX = mouseX;
+      let currentY = mouseY;
+
+      window.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+      });
+
+      const animate = () => {
+        currentX += (mouseX - currentX) * 0.1;
+        currentY += (mouseY - currentY) * 0.1;
+
+        glow.style.left = `${currentX}px`;
+        glow.style.top = `${currentY}px`;
+
+        requestAnimationFrame(animate);
+      };
+
+      animate();
   }
 
   toggleMobileNav(): void {
