@@ -104,9 +104,7 @@ import { RouterLink } from '@angular/router';
 }
 /*end slide in animation*/
 
-main {
 
-}
 
 
 /*Hero section styles*/
@@ -364,7 +362,9 @@ main {
   align-items: stretch;
   justify-content: space-between;
   gap: 0;
-  padding: 24px 45px 32px;
+  width: 100%;
+  padding: 24px 15px 32px;
+  
 }
 
 .feature {
@@ -375,7 +375,9 @@ main {
 }
 
 .feature-divider {
+  flex: 0 0 1px;
   width: 1px;
+  min-width: 1px;
   height: auto;
   min-height: 85px;
   margin: 0;

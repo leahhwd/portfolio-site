@@ -45,6 +45,10 @@ router-outlet + * {
     width: 100%;
 }
 
+.main-content {
+    width: 100%;
+}
+
  /* mobile first approach */
 .wrapper {
     display: flex;
@@ -94,7 +98,7 @@ router-outlet + * {
 /*Changing styles for navigation*/
 .content {
   width: 100%;
-  min-height: 100vh;
+  min-height: calc(100dvh - 75px);
 }
 
 
@@ -227,9 +231,13 @@ background-position: 0px 0px,0px 0px;
 background-image: radial-gradient(142% 91% at 128% -2%, #a64253 1%, #FF000000 58%),radial-gradient(156% 95% at -67% 127%, #a64253 37%, #FF000000 91%);
     }
 
+    .main-content {
+        padding-left: 200px;
+    }
+
     .content {
-      margin-left: 200px; /* Adjust based on nav-bar width */
-        width: calc(100% - 200px); /* Adjust based on nav-bar width */
+        width: 100%;
+        min-height: 100vh;
         display: flex;
         justify-content: center;
     }

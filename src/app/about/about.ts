@@ -54,8 +54,7 @@ import { RouterLink } from '@angular/router';
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    min-height: 100vh;
+    min-height: calc(100dvh - 75px);
     padding-top: 20px;
     }
 
@@ -64,6 +63,8 @@ import { RouterLink } from '@angular/router';
     flex-direction: column;
     align-items: center;
     text-align: center;
+    flex: 1;
+    width: 100%;
 
   }
 
@@ -94,6 +95,8 @@ import { RouterLink } from '@angular/router';
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+    align-items: stretch;
+    flex: 1;
     width: 100%;
 
   }
@@ -105,6 +108,7 @@ import { RouterLink } from '@angular/router';
     justify-content: center;
     gap: 20px;
     text-align: right;
+    border: 1px solid #d9c3ab;
   }
 
   .lower-text {
@@ -118,19 +122,21 @@ import { RouterLink } from '@angular/router';
   img.about-image {
     width: auto;
     max-width: 60%;
-    height: 60vh;
+    height: auto;
     object-fit: cover;
 
   }
 
+
   button.project-link {
     display: block;
     margin-bottom: 10px;
+    margin-top: 40px;
     padding: .5rem 1.2rem;
-    border: 2px solid #A64253;
+    border: 2px solid #6b7d3a;
     background: transparent;
     border-radius: 10px;
-    box-shadow: 0 0 20px #A64253;
+    box-shadow: 0 0 20px #6b7d3a;
     cursor: pointer;
 
   }
@@ -139,11 +145,12 @@ import { RouterLink } from '@angular/router';
     text-transform: uppercase;
     font-weight: 400;
     font-size: 1rem;
-    color: #A64253;
+    color: #6b7d3a;
+  
   }
 
   .project-link:hover {
-    background: #A64253;
+    background: #6b7d3a;
     color: white;
     transition: background 0.3s ease, color 0.3s ease;
   }
@@ -172,6 +179,7 @@ import { RouterLink } from '@angular/router';
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    min-height: 100vh;
     padding-top: 0;
   }
 
@@ -190,12 +198,13 @@ import { RouterLink } from '@angular/router';
   }
 
   p {
-    font-size: 1.05em;
+    font-size: 1.5em;
     font-family: 'Fira Code', monospace;
     color: #d9c3ab;
     line-height: 1.5;
     text-transform: uppercase;
     text-align: left;
+    padding-left: 20px;
   }
 
   img.about-image {
@@ -208,7 +217,7 @@ import { RouterLink } from '@angular/router';
 
 @media (min-width: 1024px) {
   p {
-    font-size: 1.25em;
+    font-size: 1.75em;
   }
 }
 

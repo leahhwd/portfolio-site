@@ -28,7 +28,7 @@ import emailjs, {type EmailJSResponseStatus} from '@emailjs/browser';
         <div class="form-columns">
             <div class="form-left">
                 <div class="form-group">
-                    <label class="form-label" for="name">Name:</label>
+                    <label class="form-label" for="name">Name*:</label>
                     <input class="form-control" type="text" id="name" name="name" [(ngModel)]="contact.name" required />
                 </div>
 
@@ -62,7 +62,7 @@ import emailjs, {type EmailJSResponseStatus} from '@emailjs/browser';
             </div>
         </div>
 
-    <button type="submit" [disabled]="!contactForm.form.valid || isSending">{{ isSending ? 'Sending...' : 'Submit' }}</button>
+    <button type="submit" [disabled]="!contactForm.form.valid || isSending">{{ isSending ? 'Sending...' : 'SUBMIT' }}</button>
 
         </form>
 
@@ -74,27 +74,30 @@ import emailjs, {type EmailJSResponseStatus} from '@emailjs/browser';
 </div>
   `,
   styles: `
+
   .page-container {
     display: flex;
+    justify-content: center;
     flex-direction: column;
-    margin-bottom: 10%;
-    padding: 0 5px;
-}
+    min-height: calc(100dvh - 75px);
+    padding: 10px 0px 0px;
+  }
+
   h1 {
     text-align: center;
     text-transform: uppercase;
     font-family: 'Inter Tight', sans-serif;
-    margin-top: 10%;
     font-size: 1.5rem;
-    padding: 10px;
+    padding: 5px;
+  }
 
-}
 .headline {
   line-height: 1.2;
   display: inline-block;
   color: #D9c3ab;
 }
 
+/*CONTACT FORM GLITCH EFFECT*/
 .glitch-container {
   display: block;
   margin-top: 8px;
@@ -175,25 +178,26 @@ import emailjs, {type EmailJSResponseStatus} from '@emailjs/browser';
   67% { opacity: 0.75; }
   100% { opacity: 0.6; }
 }
+/*END CONTACT FORM GLITCH EFFECT*/
 
 .contact-form-container {
     display: flex;
     flex-direction: column;
     max-width: 800px;
-    /* center horizontally regardless of parent offsets */
     width: 100%;
-    margin: 2% auto;
-    padding: 20px;
+    margin: 2% auto 0;
+    padding: 10px 10px 10px;
     border: 2px solid #A64253;
     box-shadow: 0 0 15px #A64253;
     border-radius: 10px;
-    background-color: transparent;
+    background-color: transparent;    
 }
 
 .slide-in {
   opacity: 0;
   transform: translateX(40px);
   animation: slideIn 1.5s ease forwards;
+  
 }
 
 @keyframes slideIn {
@@ -248,14 +252,16 @@ textarea.form-control {
 
 button {
     display: block;
-    margin: 1rem auto;
-    padding: 0.6rem 1.2rem;
+    width:70%;
+    margin: 1rem auto 0;
+    padding: 0.6rem 1rem;
     border: 2px solid #A64253;
     background: transparent;
-    color: #D9c3ab;
+    color: #A64253;
     border-radius: 10px;
     font-family: 'Fira Code', monospace;
     cursor: pointer;
+    box-shadow: 0 0 20px #A64253;
 }
 
 button:hover {
@@ -292,29 +298,42 @@ button:hover {
 
 @media (min-width: 768px) {
 
-
     h1 {
         font-size: 2.5rem;
         padding: 0;
         }
     .contact-form-container {
-        padding: 15px;
+        padding: 30px 15px;
+        
         /* keep centered and respect max-width */
         width: 100%;
         max-width: 800px;
         margin: 2% auto;
     }
+
+    button {
+        margin: 1rem auto;
+    }
 }
 
 @media (min-width: 1024px) {
 
+    .page-container {
+        align-items: center;
+        width: 100%;
+        
+        margin: 0 auto;
+    }
 
     h1 {
         font-size: 2.5rem;
+        width: 100%;
+        text-align: center;
     }
 
     .contact-form-container {
-        margin-top: 5%;
+        width: min(100%, 800px);
+        margin: 5% auto 0;
     }
 
     .form-right .form-group textarea.form-control{
@@ -328,42 +347,6 @@ button:hover {
 
 
 
-@media (min-width: 1600px) {
-    .page-container {
-        margin-left: 600px;
-        margin-top: -5%;
-    }
-}
-
-@media (min-width: 1800px) {
-    .page-container {
-        margin-left: 700px;
-        margin-top: -5%;
-    }
-}
-
-@media (min-width: 2000px) {
-    .page-container {
-        margin-left: 800px;
-        margin-top: -5%;
-    }
-}
-
-@media (min-width: 2200px) {
-    .page-container {
-        margin-left: 900px;
-        margin-top: -5%;
-    }
-}
-
-@media (min-width: 2400px) {
-    .page-container {
-        margin-left: 1000px;
-        margin-top: -5%;
-    }
-
-
-}
 
  /*ADD MEDIA QUERIES FOR Extra LARGE SCREENS AS NEEDED*/
 `

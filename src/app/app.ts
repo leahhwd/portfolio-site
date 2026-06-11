@@ -11,7 +11,7 @@ import { transition, trigger, style, animate, query } from '@angular/animations'
   template: `
   <div class='wrapper'>
     <div class="cursor-glow"></div>
-    <main class='main-content'>
+   
 
       <nav class='nav-bar'>
 
@@ -52,7 +52,7 @@ import { transition, trigger, style, animate, query } from '@angular/animations'
         </div>
 
       </nav>
-
+ <main class='main-content'>
       <section class='content'>
         <router-outlet></router-outlet>
       </section>
