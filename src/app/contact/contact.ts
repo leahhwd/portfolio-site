@@ -276,6 +276,13 @@ button:hover {
     box-shadow: 0 0 25px #A64253;
 }
 
+.error-message {
+    color: #A64253;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    font-family: 'Fira Code', monospace;
+}
+
 .response-message
  {
   margin-top: 15px;
@@ -379,7 +386,7 @@ export class ContactComponent {
       }, 2000); // Change word every 2 seconds
     }
 
-    onDestroy(): void {
+    ngOnDestroy(): void {
       clearInterval(this.intervalId);
     }
     sendEmail(e: Event, form: any) {
@@ -407,6 +414,7 @@ export class ContactComponent {
             this.message = "Message delivered! I'll get back to you soon :)";
             // Optionally reset the form model
             this.contact = new ContactFormModel();
+            this.isSending = false;
 
         }, (error) => {
             console.error('Error sending email:', error);
