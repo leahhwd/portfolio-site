@@ -17,7 +17,7 @@ import { RouterLink } from '@angular/router';
 
         <div class="lower-content">
 
-          <img src="images/portfolio-img-mobile.png" alt="About Image" class="about-image">
+          <img src="images/profile-img-mobile.png" alt="About Image" class="about-image">
 
           <div class="lower-text-container">
             <p class="lower-text">
@@ -44,7 +44,7 @@ import { RouterLink } from '@angular/router';
           </p>
         </div>
 
-        <img src="images/portfolio-img-desktop.png" alt="About Image" class="about-image">
+        <img src="images/profile-img-desktop.png" alt="About Image" class="about-image">
 
       </div>
     </main>

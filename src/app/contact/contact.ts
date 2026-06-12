@@ -79,8 +79,8 @@ import emailjs, {type EmailJSResponseStatus} from '@emailjs/browser';
     display: flex;
     justify-content: center;
     flex-direction: column;
-    min-height: calc(100dvh - 75px);
-    padding: 10px 0px 0px;
+    justify-content: flex-start;
+    overflow: hidden;
   }
 
   h1 {
@@ -88,10 +88,11 @@ import emailjs, {type EmailJSResponseStatus} from '@emailjs/browser';
     text-transform: uppercase;
     font-family: 'Inter Tight', sans-serif;
     font-size: 1.5rem;
-    padding: 5px;
+    padding-top: 2rem;
   }
 
 .headline {
+  margin-top: 1rem;
   line-height: 1.2;
   display: inline-block;
   color: #D9c3ab;
@@ -180,12 +181,14 @@ import emailjs, {type EmailJSResponseStatus} from '@emailjs/browser';
 }
 /*END CONTACT FORM GLITCH EFFECT*/
 
+
+
 .contact-form-container {
     display: flex;
     flex-direction: column;
     max-width: 800px;
-    width: 100%;
-    margin: 2% auto 0;
+    width: calc(100% - 1rem);
+    margin: 15% auto 0;
     padding: 10px 10px 10px;
     border: 2px solid #A64253;
     box-shadow: 0 0 15px #A64253;
@@ -297,18 +300,21 @@ button:hover {
 }
 
 @media (min-width: 768px) {
+  
 
+  .headline {
+    margin-top: 10%;
+  }
     h1 {
-        font-size: 2.5rem;
-        padding: 0;
+        font-size: 2rem;
+        
         }
     .contact-form-container {
         padding: 30px 15px;
-        
         /* keep centered and respect max-width */
-        width: 100%;
-        max-width: 800px;
-        margin: 2% auto;
+        margin-bottom: 5%;
+        margin-top: 5%;
+        
     }
 
     button {
