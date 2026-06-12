@@ -23,28 +23,32 @@ import emailjs, {type EmailJSResponseStatus} from '@emailjs/browser';
 
     <div class="contact-form-container" animate.enter="slide-in">
 
-        <form #contactForm="ngForm" (ngSubmit)="sendEmail($event)" *ngIf="!submitted">
+        <form #contactForm="ngForm" (ngSubmit)="sendEmail($event, contactForm)" *ngIf="!submitted">
 
         <div class="form-columns">
             <div class="form-left">
                 <div class="form-group">
-                    <label class="form-label" for="name">Name*:</label>
-                    <input class="form-control" type="text" id="name" name="name" [(ngModel)]="contact.name" required />
+                    <label class="form-label" for="name">Name:</label>
+                    <input class="form-control" type="text" id="name" name="name" [(ngModel)]="contact.name" required placeholder="Required"/>
                 </div>
 
                 <div class="form-group">
                     <label class="form-label" for="email">Email:</label>
-                    <input class="form-control" type="email" id="email" name="email" [(ngModel)]="contact.email" required />
+                    <input class="form-control" type="email" id="email" name="email" [(ngModel)]="contact.email" required email #email='ngModel' placeholder="Required"/>
+                    <div class="error-message" *ngIf="email.invalid && email.touched">
+                        Please enter a valid email address.
+                    </div>
                 </div>
 
                 <div class="form-group">
                     <label class="form-label" for="interest">Area of Interest:</label>
-                    <select class="form-control" id="interest" name="interest" [(ngModel)]="contact.interest" required>
+                    <select class="form-control" id="interest" name="interest" [(ngModel)]="contact.interest">
                     <option value="" disabled selected>Select an option</option>
                     <option value="web-development">Web Development</option>
                     <option value="mobile-apps">Mobile Apps</option>
                     <option value="ui-ux-design">UI/UX Design</option>
                     <option value="digital-marketing">Digital Marketing</option>
+                    <option value="other">Other</option>
                     </select>
                 </div>
 
@@ -57,7 +61,7 @@ import emailjs, {type EmailJSResponseStatus} from '@emailjs/browser';
             <div class="form-right">
                 <div class="form-group">
                     <label class="form-label" for="message">Message:</label>
-                    <textarea class="form-control" id="message" name="message" [(ngModel)]="contact.message" required></textarea>
+                    <textarea class="form-control" id="message" name="message" [(ngModel)]="contact.message" required placeholder="Required"></textarea>
                 </div>
             </div>
         </div>
@@ -68,6 +72,7 @@ import emailjs, {type EmailJSResponseStatus} from '@emailjs/browser';
 
         <div class="response-message" *ngIf="submitted">
           {{message}}
+          <button (click)="submitted = false; message = '';">Send Another Message</button>
         </div>
 
     </div>
@@ -193,14 +198,14 @@ import emailjs, {type EmailJSResponseStatus} from '@emailjs/browser';
     border: 2px solid #A64253;
     box-shadow: 0 0 15px #A64253;
     border-radius: 10px;
-    background-color: transparent;    
+    background-color: transparent;
 }
 
 .slide-in {
   opacity: 0;
   transform: translateX(40px);
   animation: slideIn 1.5s ease forwards;
-  
+
 }
 
 @keyframes slideIn {
@@ -300,21 +305,21 @@ button:hover {
 }
 
 @media (min-width: 768px) {
-  
+
 
   .headline {
     margin-top: 10%;
   }
     h1 {
         font-size: 2rem;
-        
+
         }
     .contact-form-container {
         padding: 30px 15px;
         /* keep centered and respect max-width */
         margin-bottom: 5%;
         margin-top: 5%;
-        
+
     }
 
     button {
@@ -327,7 +332,7 @@ button:hover {
     .page-container {
         align-items: center;
         width: 100%;
-        
+
         margin: 0 auto;
     }
 
@@ -377,17 +382,23 @@ export class ContactComponent {
     onDestroy(): void {
       clearInterval(this.intervalId);
     }
-    sendEmail(e: Event) {
+    sendEmail(e: Event, form: any) {
 
         e.preventDefault();
 
-        const form = e.target as HTMLFormElement;
+        if (form.invalid) {
+            form.control.markAllAsTouched(); // Mark all fields as touched to show validation errors
+            return;
+        }
+
         this.isSending = true;
+
+        const htmlForm = e.target as HTMLFormElement;
 
         emailjs.sendForm(
                 'service_z8s3vke',
                 'template_2gc7qfg',
-                form,
+                htmlForm,
                 'wky16DxMZoLPlayR_'
             ).then((response: EmailJSResponseStatus) => {
 
@@ -400,6 +411,7 @@ export class ContactComponent {
         }, (error) => {
             console.error('Error sending email:', error);
             this.message = 'An error occurred while sending your message. Please try again later.';
+            this.isSending = false;
             // keep submitted = false so user can retry
         });
 
