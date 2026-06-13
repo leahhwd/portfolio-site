@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import emailjs from '@emailjs/browser';
 
 import { ContactComponent } from './contact';
 
@@ -23,10 +24,15 @@ describe('Contact', () => {
 
   it('should submit the form', () => {
     const event = new Event('submit');
+    const form = { value: { color: '' } };
+
     spyOn(component, 'sendEmail');
-    component.sendEmail(event);
-    expect(component.sendEmail).toHaveBeenCalledWith(event);
+
+    component.sendEmail(event, form);
+
+    expect(component.sendEmail).toHaveBeenCalledWith(event, form);
   });
+
 
   it('should call sendEmail on form submission', () => {
     spyOn(component, 'sendEmail');

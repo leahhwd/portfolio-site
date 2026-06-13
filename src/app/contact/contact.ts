@@ -58,6 +58,8 @@ import emailjs, {type EmailJSResponseStatus} from '@emailjs/browser';
                 </div>
             </div>
 
+            <input type="text" class="hp-field" name="color" aria-hidden="true" style="display: none;" />
+
             <div class="form-right">
                 <div class="form-group">
                     <label class="form-label" for="message">Message:</label>
@@ -393,14 +395,26 @@ export class ContactComponent {
 
         e.preventDefault();
 
+
         if (form.invalid) {
             form.control.markAllAsTouched(); // Mark all fields as touched to show validation errors
             return;
         }
-
         this.isSending = true;
 
+
+
         const htmlForm = e.target as HTMLFormElement;
+
+        const honeyPot = (htmlForm.elements.namedItem('color') as HTMLInputElement).value;
+
+
+    if (honeyPot) {
+      console.warn('Bot submission detected - ignoring form submission');
+      this.isSending = false;
+      this.submitted = false;
+      return;
+    }
 
         emailjs.sendForm(
                 'service_z8s3vke',
