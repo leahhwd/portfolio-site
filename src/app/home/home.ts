@@ -46,7 +46,7 @@ import { RouterLink } from '@angular/router';
         <div class="feature">
           <img src="images/code.svg" alt="Code Icon" width="40" height="40">
           <div class="feature-content">
-            <h4>CLEAN CODE</h4>
+            <h3>CLEAN CODE</h3>
             <p>Clean and efficient code for scalable applications.</p>
           </div>
         </div>
@@ -56,7 +56,7 @@ import { RouterLink } from '@angular/router';
         <div class="feature">
           <img src="images/storage.svg" class="featured-icon" alt="Stack Icon" width="40" height="40">
           <div class="feature-content">
-            <h4>Full-Stack</h4>
+            <h3>Full-Stack</h3>
             <p>Responsive design that works on all devices.</p>
           </div>
         </div>
@@ -66,7 +66,7 @@ import { RouterLink } from '@angular/router';
         <div class="feature">
           <img src="images/rocket.svg" alt="rocket icon" class="featured-icon" width="40" height="40">
           <div class="feature-content">
-            <h4>PERFORMANCE OPTIMIZATION</h4>
+            <h3>PERFORMANCE OPTIMIZATION</h3>
             <p>Optimized performance for fast-loading applications.</p>
           </div>
         </div>
@@ -76,7 +76,7 @@ import { RouterLink } from '@angular/router';
         <div class="feature">
           <img src="images/person.svg" alt="person icon" class="featured-icon" width="40" height="40">
           <div class="feature-content">
-            <h4>User Focused</h4>
+            <h3>User Focused</h3>
             <p>Contemporary user interface and experience design.</p>
           </div>
         </div>
@@ -252,7 +252,7 @@ padding: 0px 20px;
   flex-shrink: 0;
 }
 
-.feature h4 {
+.feature h3 {
   color: #e6d3b3;
   font-size: 1rem;
   font-family: 'Fira Code', sans-serif;
@@ -364,7 +364,7 @@ main {
   gap: 0;
   width: 100%;
   padding: 24px 15px 32px;
-  
+
 }
 
 .feature {
