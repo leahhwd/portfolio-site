@@ -1,11 +1,7 @@
 /* Global Styles */
 /* Importing a Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
-
-/*Updated font styles*/
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Great+Vibes&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lavishly+Yours&display=swap');
-
 @import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');
 
 
@@ -29,8 +25,6 @@ html, body {
     height: 100%;
     background-color: #171412;
     overflow-y: scroll;
-
-
 }
 
 app-root,
@@ -56,6 +50,7 @@ router-outlet + * {
     background-image: radial-gradient(142% 91% at 48% -18%, #a64253 12%, #FF000000 65%);
 }
 
+/* Cursor Glow Effect */
 .cursor-glow {
     position: fixed;
     width: 450px;
@@ -82,9 +77,9 @@ router-outlet + * {
 
     filter: blur(55px);
     mix-blend-mode: screen;
-
     animation: liquid-morph 12s ease-in-out infinite, liquid-float 18s ease-in-out infinite;
 }
+
 @keyframes liquid-morph {
     0% {
         border-radius: 42% 58% 63% 37% / 41% 44% 56% 59%;
@@ -113,51 +108,12 @@ router-outlet + * {
         background-position: 0% 0%, 100% 50%, 50% 100%;
     }
 }
-/* old cursor glow
-.cursor-glow {
-  position: fixed;
-  width: 400px;
-  height: 400px;
-  pointer-events: none;
-  border-radius: 50%;
-  left: 0;
-  top: 0;
-  background: radial-gradient(
-    circle,
-    rgba(166, 66, 83, 0.35) 0%,
-    rgba(255, 0, 0, 0.15) 30%,
-    transparent 80%
-  );
-  background-size: 200% 200%;
-
-  transform: translate(-50%, -50%);
-  filter: blur(40px);
-  mix-blend-mode: screen;
-  z-index: 50;
-  will-change: left, top, background-position;
-  animation: liquid-flow 15s ease infinite;
-}
-
-@keyframes liquid-flow {
-  0% {
-    background-position: 25% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 25% 50%;
-  }
-}
-
-*/
 
 /*Changing styles for navigation*/
 .content {
   width: 100%;
   min-height: calc(100dvh - 75px);
 }
-
 
 .nav-bar {
     width: 100%;
@@ -168,7 +124,6 @@ router-outlet + * {
     align-items: center;
     padding: 1rem 2rem;
     background-color: #54642E;
-
     z-index: 100;
 }
 
@@ -215,6 +170,7 @@ router-outlet + * {
     padding: 10px;
     text-align: right;
 }
+
 .mobile-nav__item {
     margin: 10px 0;
 }
@@ -227,6 +183,7 @@ router-outlet + * {
     font-family: 'Fira Code', monospace;
     font-size: 1.2rem;
 }
+
 .mobile-nav__link--contact {
     display: inline-block;
     margin: 1rem auto;
@@ -241,7 +198,6 @@ router-outlet + * {
 .mobile-nav__link:hover {
     color: #D9C3Ab;
 }
-
 
 .nav__list {
     display: none;
@@ -280,12 +236,13 @@ router-outlet + * {
 
 /* Desktop and larger tablets */
 @media (min-width: 768px) {
-    .wrapper {
-        display: flex;
-        flex-direction: row;
-      background-size: 100% 100%;
-background-position: 0px 0px,0px 0px;
-background-image: radial-gradient(142% 91% at 128% -2%, #a64253 1%, #FF000000 58%),radial-gradient(156% 95% at -67% 127%, #a64253 37%, #FF000000 91%);
+
+  .wrapper {
+    display: flex;
+    flex-direction: row;
+    background-size: 100% 100%;
+    background-position: 0px 0px,0px 0px;
+    background-image: radial-gradient(142% 91% at 128% -2%, #a64253 1%, #FF000000 58%),radial-gradient(156% 95% at -67% 127%, #a64253 37%, #FF000000 91%);
     }
 
     .main-content {
@@ -328,20 +285,15 @@ background-image: radial-gradient(142% 91% at 128% -2%, #a64253 1%, #FF000000 58
         padding-left: 15px;
     }
 
-
-
-
-
     .nav__link--contact {
-
       margin-left: 20%;
-    padding: 0.6rem 1.2rem;
-    border: 2px solid #A64253;
-    box-shadow: 0 0 15px #A64253;
-    background: transparent;
-    border-radius: 5px;
-    cursor: pointer;
-}
+      padding: 0.6rem 1.2rem;
+      border: 2px solid #A64253;
+      box-shadow: 0 0 15px #A64253;
+      background: transparent;
+      border-radius: 5px;
+      cursor: pointer;
+    }
 
     ul {
         list-style-type: none;
@@ -363,12 +315,9 @@ background-image: radial-gradient(142% 91% at 128% -2%, #a64253 1%, #FF000000 58
         display: flex;
         flex-direction: row;
         margin-top: auto;
-
     }
 
     .social-icon {
         padding: 0.5em;
     }
-
-
 }

@@ -50,6 +50,7 @@ import { RouterLink } from '@angular/router';
     </main>
   `,
   styles: `
+
   main {
     display: flex;
     flex-direction: column;
@@ -75,7 +76,6 @@ import { RouterLink } from '@angular/router';
   }
 
   @keyframes slideIn {
-
     100% {
       opacity: 1;
       transform: translateX(0);
@@ -127,7 +127,6 @@ import { RouterLink } from '@angular/router';
 
   }
 
-
   button.project-link {
     display: block;
     margin-bottom: 10px;
@@ -138,15 +137,14 @@ import { RouterLink } from '@angular/router';
     border-radius: 10px;
     box-shadow: 0 0 20px #6b7d3a;
     cursor: pointer;
-
   }
-    .project-link {
+
+  .project-link {
     font-family: 'Fira Code', monospace;
     text-transform: uppercase;
     font-weight: 400;
     font-size: 1rem;
     color: #6b7d3a;
-  
   }
 
   .project-link:hover {
