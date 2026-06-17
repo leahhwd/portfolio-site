@@ -192,7 +192,6 @@ import { RouterLink } from '@angular/router';
     flex-direction: column;
     gap: 20px;
     max-width: 60%;
-
   }
 
   p {
@@ -240,7 +239,6 @@ import { RouterLink } from '@angular/router';
     padding-right: 80px;
   }
 }
-
   `
 })
 export class AboutComponent {

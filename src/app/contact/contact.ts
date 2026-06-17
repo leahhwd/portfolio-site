@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, NgForm } from '@angular/forms';
 import { ContactFormModel } from '../models/contact-form.model';
 import emailjs, {type EmailJSResponseStatus} from '@emailjs/browser';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-contact',
@@ -188,8 +189,6 @@ import emailjs, {type EmailJSResponseStatus} from '@emailjs/browser';
 }
 /*END CONTACT FORM GLITCH EFFECT*/
 
-
-
 .contact-form-container {
     display: flex;
     flex-direction: column;
@@ -285,8 +284,7 @@ button:hover {
     font-family: 'Fira Code', monospace;
 }
 
-.response-message
- {
+.response-message {
   margin-top: 15px;
   padding: 12px 20px;
   border-radius: 5px;
@@ -300,7 +298,6 @@ button:hover {
   border: 1px solid #00c896;
   color: #d9c3ab;
 }
-
 
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(6px); }
@@ -364,14 +361,11 @@ button:hover {
             padding: 0.8rem 1rem;
     }
 }
-
-
-
-
  /*ADD MEDIA QUERIES FOR Extra LARGE SCREENS AS NEEDED*/
 `
 })
 export class ContactComponent {
+
     contact = new ContactFormModel();
     submitted = false;
     isSending = false;
@@ -391,6 +385,7 @@ export class ContactComponent {
     ngOnDestroy(): void {
       clearInterval(this.intervalId);
     }
+
     sendEmail(e: Event, form: any) {
 
         e.preventDefault();
@@ -402,13 +397,10 @@ export class ContactComponent {
         }
         this.isSending = true;
 
-
-
         const htmlForm = e.target as HTMLFormElement;
-
         const honeyPot = (htmlForm.elements.namedItem('color') as HTMLInputElement).value;
 
-
+/*Honeypot field check*/
     if (honeyPot) {
       console.warn('Bot submission detected - ignoring form submission');
       this.isSending = false;
@@ -420,7 +412,7 @@ export class ContactComponent {
                 'service_z8s3vke',
                 'template_2gc7qfg',
                 htmlForm,
-                'wky16DxMZoLPlayR_'
+                environment.emailJSpublicKey
             ).then((response: EmailJSResponseStatus) => {
 
             console.log('Email sent successfully:', response);
@@ -436,7 +428,5 @@ export class ContactComponent {
             this.isSending = false;
             // keep submitted = false so user can retry
         });
-
     }
-
 }

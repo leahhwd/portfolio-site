@@ -33,6 +33,7 @@ describe('Contact', () => {
     expect(component.sendEmail).toHaveBeenCalledWith(event, form);
   });
 
+/*Create a spec test for honeypot field to ensure it is empty on form submission*/
 
   it('should call sendEmail on form submission', () => {
     spyOn(component, 'sendEmail');
