@@ -415,7 +415,7 @@ export class ContactComponent {
                 environment.emailJSpublicKey
             ).then((response: EmailJSResponseStatus) => {
 
-            console.log('Email sent successfully:', response);
+
             this.submitted = true;
             this.message = "Message delivered! I'll get back to you soon :)";
             // Optionally reset the form model
@@ -426,7 +426,6 @@ export class ContactComponent {
             console.error('Error sending email:', error);
             this.message = 'An error occurred while sending your message. Please try again later.';
             this.isSending = false;
-            // keep submitted = false so user can retry
         });
     }
 }
