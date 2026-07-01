@@ -70,7 +70,9 @@ import { TechCarouselComponent } from '../tech-carousel/tech-carousel.component'
 }
 
 main {
-  width: 100%;
+
+  max-width: 100%;
+  overflow-x: hidden;
 
 }
 
@@ -203,6 +205,7 @@ padding: 12px 15px;
 }
 
 .carousel {
+
   display: flex;
   flex-direction: column;
   align-items: center;

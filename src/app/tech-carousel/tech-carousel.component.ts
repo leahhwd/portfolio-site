@@ -29,8 +29,10 @@ interface Tech {
   </div>
   `,
   styles: `
+
   .carousel-container {
     width: 100%;
+    max-width: 100%;
     overflow: hidden;
     padding: 1.5rem 0;
     position: relative;
@@ -59,7 +61,6 @@ interface Tech {
 
   .carousel-track {
     display: flex;
-    width: max-content;
     animation: scroll 20s linear infinite;
     will-change: transform;
   }
