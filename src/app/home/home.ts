@@ -205,10 +205,14 @@ import { RouterLink } from '@angular/router';
 
 .about-link {
   border: 2px solid #6b7d3a;
-
   color: #6b7d3a;
   box-shadow: 0 0 20px #6b7d3a;
   border-radius: 10px;
+}
+
+.about-link:hover {
+  background-color: #6b7d3a;
+  color: black;
 }
 
 .laptop-image-wrap {
@@ -309,7 +313,7 @@ padding: 0px 20px;
 main {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+
 }
 
 .hero {
