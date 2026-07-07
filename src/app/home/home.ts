@@ -34,7 +34,7 @@ import { RouterLink } from '@angular/router';
         <!-- Right side visual content -->
          <div class="hero-visual">
           <div class="laptop-image-wrap">
-            <img class="laptop-image" src="images/laptop-vector.png" alt="Laptop illustration" />
+            <img class="laptop-image" src="images/laptop-vector-2.png" alt="Laptop illustration" />
           </div>
         </div>
         <!--Right side visual content end-->

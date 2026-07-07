@@ -19,10 +19,19 @@ import { TechCarouselComponent } from '../tech-carousel/tech-carousel.component'
         <div class="divider"></div>
 
         <p class="about-paragraph">
-          I'm a full-stack developer focused on creating modern, responsive websites
-          that balance clean design with powerful functionality. I turn ideas into fast, secure
-          and user-friendly web solutions that help businesses and professionals thrive online.
+          Hey 👋 my name is Leah, and I’m a full-stack developer
+          who loves turning ideas into functional applications. My journey into
+          development started with an internet obsession, a questionable amount
+          of screen time, and curiosity about how it all worked. Eventually,
+          this grew into a passion for the infinite possibilities.
         </p>
+        <p>
+          I earned my Bachelor of Science in Full Stack Web Development in 2025 🎓
+           which gave me solid foundational experience building applications using technologies
+           like Angular and Node.js. Now, my days are spent evaluating new methods, combining
+           unique ideas with stable code, and practicing the most important Dev skill, knowing
+           exactly what to Google.
+</p>
 </div>
 
     <div class="image-wrapper">
