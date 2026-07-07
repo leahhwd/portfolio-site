@@ -22,7 +22,9 @@ import { RouterLink } from '@angular/router';
 
           <div class="divider"></div>
           <!--reduce? -->
-          <p class="description">I create dynamic and responsive web applications that provide seamless user experiences. With a strong foundation in both front-end and back-end technologies, I am passionate about crafting efficient and scalable solutions.</p>
+          <p class="description">I create dynamic and responsive web applications that provide seamless user experiences. 
+            With a strong foundation in both front-end and back-end technologies, I am passionate about
+             crafting efficient and scalable solutions.</p>
 
           <div class="cta-buttons">
             <a routerLink="/projects" class="projects-link">VIEW MY WORK →</a>
@@ -113,8 +115,7 @@ import { RouterLink } from '@angular/router';
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding: 0px 45px;
-  min-height: 100vh;
+  padding: 0px 20px;
 }
 
 .header-intro {
@@ -123,7 +124,6 @@ import { RouterLink } from '@angular/router';
   letter-spacing: 2.5px;
   font-size: 1.5rem;
   color: #d45c73;
-
 }
 
 .header-name-bold {
@@ -148,7 +148,6 @@ import { RouterLink } from '@angular/router';
   font-weight: bold;
   letter-spacing: 2px;
   color: #e6d3b3;
-
 }
 
 .description {
@@ -176,17 +175,14 @@ import { RouterLink } from '@angular/router';
   text-decoration: none;
   font-family: 'Fira Code', sans-serif;
   transition: all 0.3s ease;
-
 }
 
 .cta-buttons a {
-
   padding: 12px 15px;
   margin-bottom: 15px;
   text-decoration: none;
   font-family: 'Fira Code', sans-serif;
   transition: all 0.3s ease;
-
 }
 
 .projects-link {
@@ -194,8 +190,6 @@ import { RouterLink } from '@angular/router';
   color: #d45c73;
   border-radius: 10px;
   box-shadow: 0 0 20px #A64253;
-
-
 }
 
 .projects-link:hover {
@@ -218,8 +212,7 @@ import { RouterLink } from '@angular/router';
 .laptop-image-wrap {
   max-width: 460px;
   width: 100%;
-  margin-left: 0;
-  margin-right: auto;
+  padding: 20px;
 }
 
 .laptop-image {
@@ -228,15 +221,12 @@ import { RouterLink } from '@angular/router';
   max-width: 420px;
   height: auto;
   filter: drop-shadow(0 0 5px #d45c73);
-
 }
 
 .featured-info {
   display: flex;
   flex-direction: column;
   align-items: center;
-
-padding: 0px 20px;
 }
 
 .feature {
@@ -282,111 +272,114 @@ padding: 0px 20px;
 
 @media(min-width: 768px) {
 
+  .header-intro {
+    padding-top: 50px;
+  }
 
-.header-intro {
-  padding-top: 50px;
-}
+  .header-name-bold {
+    font-size: 11em;
+  }
 
-.header-name-bold {
-  font-size: 11em;
-}
+  .header-name-light {
+    font-size: 4em;
+    margin-top: -80px;
+    padding-left: 30px;
+  }
 
-.header-name-light {
-  font-size: 4em;
-  margin-top: -80px;
-  padding-left: 30px;
-}
+  .title {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
 
-.title {
-  font-size: 1.5rem;
-  font-weight: 500;
-}
+  .cta-buttons {
+    flex-direction: row;
+    gap: 20px;
+    
+  }
 
-.cta-buttons {
-  width: 50%;
-}
+  .cta-buttons a {
+    width: 100%;
 
-
+  }
 }
 
 @media(min-width: 1024px) {
-main {
-  display: flex;
-  flex-direction: column;
+  main {
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+    justify-content: center;
+  }
 
-}
+  .hero {
+    flex: 1;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(40px, 6vw, 88px);
+    min-height: 0;
+    width: min(100%, 1320px);
+    margin: 0 auto;
+  }
 
-.hero {
-  flex: 1;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: clamp(40px, 6vw, 88px);
-  min-height: 0;
+  .hero-content {
+    flex: 1 1 0;
+    max-width: 560px;
+  }
 
-  width: min(100%, 1320px);
-  margin: 0 auto;
-}
+  .header-name-bold {
+    font-size: 11em;
+  }
 
-.hero-content {
-  flex: 1 1 0;
-  max-width: 560px;
-}
+  .header-name-light {
+    font-size: 3em;
+    margin-top: -80px;
+    padding-left: 30px;
+  }
 
-.header-name-bold {
-  font-size: 11em;
-}
+  .hero-visual {
+    flex: 0 1 42%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    min-width: 280px;
+  }
 
-.header-name-light {
-  font-size: 3em;
-  margin-top: -80px;
-  padding-left: 30px;
-}
+  .laptop-image-wrap {
+    max-width: clamp(280px, 34vw, 500px);
+    margin-left: auto;
+    margin-right: 0;
+  }
 
-.hero-visual {
-  flex: 0 1 42%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  min-width: 280px;
-}
+  .laptop-image {
+    max-width: clamp(280px, 34vw, 500px);
+  }
 
-.laptop-image-wrap {
-  max-width: clamp(280px, 34vw, 500px);
-  margin-left: auto;
-  margin-right: 0;
-}
+  .featured-info {
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 0;
+    width: 100%;
+    padding: 24px 15px 32px;
+  }
 
-.laptop-image {
-  max-width: clamp(280px, 34vw, 500px);
-}
+  .feature {
+    flex: 1;
+    width: auto;
+    max-width: none;
+    padding: 0 20px;
+  }
 
-.featured-info {
-  flex-direction: row;
-  align-items: stretch;
-  justify-content: space-between;
-  gap: 0;
-  width: 100%;
-  padding: 24px 15px 32px;
-
-}
-
-.feature {
-  flex: 1;
-  width: auto;
-  max-width: none;
-  padding: 0 20px;
-}
-
-.feature-divider {
-  flex: 0 0 1px;
-  width: 1px;
-  min-width: 1px;
-  height: auto;
-  min-height: 85px;
-  margin: 0;
-  align-self: stretch;
-}
+  .feature-divider {
+    flex: 0 0 1px;
+    width: 1px;
+    min-width: 1px;
+    height: auto;
+    min-height: 85px;
+    margin: 0;
+    align-self: stretch;
+  }
 }
 
   `
