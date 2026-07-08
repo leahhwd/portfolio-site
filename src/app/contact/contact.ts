@@ -87,23 +87,27 @@ import { environment } from '../../environments/environment';
     display: flex;
     justify-content: center;
     flex-direction: column;
-    justify-content: flex-start;
+    min-height: 100dvh;
     overflow: hidden;
+    padding: 2rem 0;
   }
 
   h1 {
     text-align: center;
+    margin: 0;
     text-transform: uppercase;
-    font-family: 'Inter Tight', sans-serif;
+    font-family: 'Fira Code', sans-serif;
+    font-weight: 500;
     font-size: 1.5rem;
-    padding-top: 2rem;
   }
 
 .headline {
-  margin-top: 1rem;
   line-height: 1.2;
   display: inline-block;
   color: #D9c3ab;
+  font-family: 'Fira Code', sans-serif;
+  font-weight: 500;
+  border: 2px solid red;
 }
 
 /*CONTACT FORM GLITCH EFFECT*/
@@ -134,7 +138,7 @@ import { environment } from '../../environments/environment';
 
 .glitch span:first-child {
   clip-path: inset(0 0 65% 0);
-  opacity: 0.6:
+  opacity: 0.6;
   animation: glitchSliceTop 700ms infinite steps(1, end);
   mix-blend-mode: lighten;
 }
@@ -193,9 +197,9 @@ import { environment } from '../../environments/environment';
     display: flex;
     flex-direction: column;
     max-width: 800px;
-    width: calc(100% - 1rem);
+    width: calc(100% - 2rem);
     margin: 15% auto 0;
-    padding: 10px 10px 10px;
+    padding: 0 10px 10px;
     border: 2px solid #A64253;
     box-shadow: 0 0 15px #A64253;
     border-radius: 10px;
@@ -314,19 +318,18 @@ button:hover {
 
 
   .headline {
-    margin-top: 10%;
+    margin-top: 1.5rem;
   }
     h1 {
         font-size: 2rem;
 
         }
     .contact-form-container {
-        padding: 30px 15px;
-        /* keep centered and respect max-width */
         margin-bottom: 5%;
         margin-top: 5%;
 
     }
+   
 
     button {
         margin: 1rem auto;

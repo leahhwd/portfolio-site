@@ -40,7 +40,7 @@ import { ProjectService, Project } from '../services/project'; // Alias to avoid
 
 
                 <div class="other-projects"> <!-- Project info section -->
-                  <h4>Other Projects</h4>
+                  <h4>More Projects</h4>
                   <div class="divider"></div>
                   <div *ngFor="let project of projects; let i = index" class="project-container" (click)="setActive(i)" (mouseleave)="clearActive()">
                     <img [src]="project.img" [alt]="project.title">
@@ -48,7 +48,7 @@ import { ProjectService, Project } from '../services/project'; // Alias to avoid
                       <h2>{{ project.title }}</h2>
                       <p>{{ project.description }}</p>
                       <button class="project-link">
-                        Check it out
+                      View Project →
                       </button>
                     </div>
                   </div>
@@ -64,9 +64,16 @@ import { ProjectService, Project } from '../services/project'; // Alias to avoid
   styles: `
 
 .wrapper {
-    padding: 1.5rem 1rem;
-    max-width: 1200px;
+    padding: 1.5rem;
     margin : 0 auto;
+    overflow: hidden;
+    
+  }
+
+  .projects-header {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1.5rem;
   }
 
   .projects-header h3 {
@@ -86,14 +93,16 @@ import { ProjectService, Project } from '../services/project'; // Alias to avoid
   height: 8px;
 }
 
+
   .projects-header h1 {
     font-family: 'Fira Code', sans-serif;
     font-size: 2rem;
     color: #e6d3b3;
     font-weight: 500;
     text-transform: uppercase;
-    padding-top: 0.5rem;
   }
+
+  
 
 .slide-in {
   transform: translateX(40px);
@@ -114,12 +123,7 @@ import { ProjectService, Project } from '../services/project'; // Alias to avoid
   background-color: #d45c73;
   margin: 1rem 0;
 }
-.featured-divider {
-  width: 50px;
-  height: 2px;
-  background-color: #d45c73;
-  margin: 1rem 5%;
-}
+
 
 .featured-info {
   padding: 1rem 5%;
@@ -157,7 +161,6 @@ button {
   font-size: .90rem;
   color: #e6d3b3;
   max-width: 600px;
-  margin: 10% 0;
 }
 
 .featured-project, .other-projects {
@@ -167,10 +170,12 @@ button {
 
 .featured-project {
   display: flex;
+  align-items: center;
   flex-direction: column;
   border-radius: 8px;
   background: rgba(0, 0, 0, 0.5);
   border: 1px solid rgb(212 92 115 / 0.5);
+  max-width: 1200px;
 }
 
 .featured-image img {
@@ -179,6 +184,7 @@ button {
   object-fit: cover;
   border-radius: 8px;
   display: block;
+  max-width: 1024px;
 }
 
 .other-projects {
@@ -186,12 +192,21 @@ button {
   grid-template-columns: 1fr;
   margin-top: 2.5rem;
   gap: 1rem;
+  max-width: 1200px;
 
+}
+
+h4 {
+  font-family: 'Fira Code', sans-serif;
+  font-size: 1rem;
+  color: #e6d3b3;
+  text-transform: uppercase;
+  font-weight: 500;
 }
 
 .project-container {
   width: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(107, 125, 58, 0.5);
   border-radius: 8px;
   overflow: hidden;
   position: relative;
@@ -221,8 +236,32 @@ height: auto;
   padding: 1rem;
 }
 
+.project-info-overlay h2 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
 .project-info-overlay p {
-  display: none;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin: 1rem 0;
+}
+
+.project-info-overlay button {
+  appearance: none;
+  -webkit-appearance: none;
+  background: none;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+  color: #A64253;
+  font: inherit;
+  text-transform: uppercase;
+  cursor: pointer;
+
 }
 
 @media (min-width: 768px) {
@@ -230,6 +269,16 @@ height: auto;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
+
+  .project-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .project-container img {
+    margin-top: 1rem;
+  }
+
+
 }
 
 `

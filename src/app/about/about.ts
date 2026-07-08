@@ -25,7 +25,7 @@ import { TechCarouselComponent } from '../tech-carousel/tech-carousel.component'
           of screen time, and curiosity about how it all worked. Eventually,
           this grew into a passion for the infinite possibilities.
         </p>
-        <p>
+        <p class="about-paragraph-2">
           I earned my Bachelor of Science in Full Stack Web Development in 2025 🎓
            which gave me solid foundational experience building applications using technologies
            like Angular and Node.js. Now, my days are spent evaluating new methods, combining
@@ -79,7 +79,7 @@ import { TechCarouselComponent } from '../tech-carousel/tech-carousel.component'
 }
 
 main {
-
+  
   max-width: 100%;
   overflow-x: hidden;
 
@@ -115,7 +115,6 @@ main {
   align-items: start;
   padding-left: 1rem;
   padding-right: 1rem;
-  line-height: 1.7;
 }
 
 h1 {
@@ -124,6 +123,7 @@ h1 {
   color: #e6d3b3;
   font-weight: 500;
   text-transform: uppercase;
+  padding-top: 1.5rem;
 
 }
 
@@ -134,10 +134,14 @@ h1 {
   margin: 30px 0;
 }
 
+.about-paragraph-2 {
+  padding-top: 1.5rem;
+}
 p {
   font-family: 'Fira Code', sans-serif;
   color: #e6d3b3;
-  padding-bottom: 8%;
+  line-height: 1.5;
+
 }
 
 .image-wrapper {
@@ -225,12 +229,17 @@ padding: 12px 15px;
 .tech-carousel {
   margin-top: 1rem;
 }
+
+
+
+
 @media (min-width: 768px) {
  main {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
  }
 
  .about-content {
@@ -246,7 +255,7 @@ padding: 12px 15px;
     "carousel carousel";
     align-items: start;
     gap: 0;
-    padding-top: 10%;
+   padding-top: 2rem;
  }
 
  .about-text {
@@ -254,20 +263,22 @@ padding: 12px 15px;
   grid-area: text;
   text-align: left;
   line-height: normal;
-  padding-left: 3rem;
+  padding-left: 2rem;
  }
-
+.about-text p {
+  font-size: .75rem;
+}
  .about-image {
   grid-area: image;
-  width: 85%;
-  transform: scale(1.3);
-
-
- }
+  width: 100%;
+  justify-self: center;
+  -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+}
 
  .cta-buttons {
   width: auto;
-  flex-direction: column;
+  
  }
 
  .carousel-intro {
@@ -284,21 +295,8 @@ padding: 12px 15px;
 }
 
 @media (min-width: 1024px) {
-  .about-content {
-    padding-top: 5%;
-  }
+ 
 
-  .about-text {
-
-    margin-top: 5%;
-
-  }
-
-
-
-  .about-paragraph {
-    line-height: 2rem;
-  }
 
 
   .about-image {
@@ -318,13 +316,7 @@ padding: 12px 15px;
 
 }
 
-@media(min-width: 1440px) {
 
-  .about-text {
-    font-size: 1.5rem;
-    line-height: 2rem;
-  }
-}
   `
 })
 export class AboutComponent {
