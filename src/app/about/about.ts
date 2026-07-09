@@ -238,8 +238,9 @@ padding: 12px 15px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+
  }
 
  .about-content {
@@ -270,14 +271,19 @@ padding: 12px 15px;
 }
  .about-image {
   grid-area: image;
+  grid-row: 1 / 3;
   width: 100%;
+  transform: none;
+  align-self: end;
   justify-self: center;
   -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
   mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  border: 2px solid red;
 }
 
  .cta-buttons {
   width: auto;
+  align-self: start;
   
  }
 

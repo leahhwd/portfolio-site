@@ -42,13 +42,18 @@ import { environment } from '../../environments/environment';
                 </div>
 
                 <div class="form-group">
-                    <label class="form-label" for="interest">Area of Interest:</label>
+                    <label class="form-label" for="interest">What can I help you with?</label>
                     <select class="form-control" id="interest" name="interest" [(ngModel)]="contact.interest">
                     <option value="" disabled selected>Select an option</option>
-                    <option value="web-development">Web Development</option>
-                    <option value="mobile-apps">Mobile Apps</option>
-                    <option value="ui-ux-design">UI/UX Design</option>
-                    <option value="digital-marketing">Digital Marketing</option>
+                    <option value="new-website">I need a new website</option>
+                    <option value="redesign">I want to redesign my website</option>
+                    <option value="mobile-apps">I need a mobile app</option>
+                    <option value="ui-ux-design">I need UI/UX design</option>
+                    <option value="ecommerce">I need eCommerce development</option>
+                    <option value="digital-marketing">I need digital marketing</option>
+                    <option value="consultation">I need a consultation</option>
+                    <option value="maintenance">I need ongoing maintenance</option>
+                    <option value="consultation">I want to discuss my options</option>
                     <option value="other">Other</option>
                     </select>
                 </div>
@@ -89,7 +94,8 @@ import { environment } from '../../environments/environment';
     flex-direction: column;
     min-height: 100dvh;
     overflow: hidden;
-    padding: 2rem 0;
+    padding: 3rem 0 2rem;
+    
   }
 
   h1 {
@@ -99,6 +105,7 @@ import { environment } from '../../environments/environment';
     font-family: 'Fira Code', sans-serif;
     font-weight: 500;
     font-size: 1.5rem;
+    
   }
 
 .headline {
@@ -107,7 +114,7 @@ import { environment } from '../../environments/environment';
   color: #D9c3ab;
   font-family: 'Fira Code', sans-serif;
   font-weight: 500;
-  border: 2px solid red;
+ 
 }
 
 /*CONTACT FORM GLITCH EFFECT*/
@@ -117,6 +124,7 @@ import { environment } from '../../environments/environment';
   height: 1.2em;
   position: relative;
   overflow: hidden;
+  
 }
 
 .glitch {
@@ -196,14 +204,15 @@ import { environment } from '../../environments/environment';
 .contact-form-container {
     display: flex;
     flex-direction: column;
-    max-width: 800px;
+    max-width: 600px;
     width: calc(100% - 2rem);
-    margin: 15% auto 0;
+    margin: 2rem auto 0;
     padding: 0 10px 10px;
     border: 2px solid #A64253;
     box-shadow: 0 0 15px #A64253;
     border-radius: 10px;
     background-color: transparent;
+    
 }
 
 .slide-in {
@@ -226,13 +235,14 @@ import { environment } from '../../environments/environment';
 
 .form-columns {
     display: flex;
+    flex-direction: column;
     gap: 2rem;
     flex-wrap: wrap;
 }
 
 .form-left, .form-right {
     flex: 1;
-    min-width: 250px;
+    width: 100%;
 }
 
 .form-group {
@@ -315,7 +325,10 @@ button:hover {
 }
 
 @media (min-width: 768px) {
-
+.form-columns {
+  flex-direction: row;
+  gap: 2rem;
+}
 
   .headline {
     margin-top: 1.5rem;

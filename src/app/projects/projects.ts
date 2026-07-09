@@ -67,6 +67,7 @@ import { ProjectService, Project } from '../services/project'; // Alias to avoid
     padding: 1.5rem;
     margin : 0 auto;
     overflow: hidden;
+    justify-content: center;
     
   }
 
@@ -185,6 +186,7 @@ button {
   border-radius: 8px;
   display: block;
   max-width: 1024px;
+  filter: drop-shadow(0 0 12px rgba(166, 66, 83, 0.5));
 }
 
 .other-projects {
@@ -224,7 +226,8 @@ height: auto;
   object-fit: cover;
   border-radius: 8px;
   display: block;
-  margin-left: 1rem;
+  margin-left: 0.5rem;
+  filter: drop-shadow(0 0 12px rgba(84, 100, 46, 0.4));
 }
 
 .project-info-overlay {
@@ -233,19 +236,19 @@ height: auto;
   justify-content: center;
   color: #e6d3b3;
   font-family: 'Fira Code', sans-serif;
-  padding: 1rem;
+  padding: 1rem 1rem 0.5rem 1rem;
 }
 
 .project-info-overlay h2 {
   font-size: 1.25rem;
-  font-weight: 500;
+  font-weight: 400;
   margin-bottom: 0.5rem;
 }
 
 .project-info-overlay p {
-  font-size: 0.875rem;
-  line-height: 1.5;
-  margin: 1rem 0;
+  font-size: 0.75rem;
+  line-height: 1.25;
+  margin: .5rem 0;
 }
 
 .project-info-overlay button {
@@ -261,13 +264,23 @@ height: auto;
   font: inherit;
   text-transform: uppercase;
   cursor: pointer;
-
+  font-size: 0.95rem;
 }
 
 @media (min-width: 768px) {
+
+  .divider {
+    width: 50%;
+  }
+ 
   .other-projects {
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
+  }
+
+  .other-projects h4,
+  .other-projects > .divider {
+    grid-column: span 2;
   }
 
   .project-container {
@@ -275,6 +288,10 @@ height: auto;
     flex-direction: column;
   }
   .project-container img {
+    margin-top: 1rem;
+  }
+
+  .project-container button {
     margin-top: 1rem;
   }
 
