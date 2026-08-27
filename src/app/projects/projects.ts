@@ -19,7 +19,7 @@ import { ProjectService, Project } from '../services/project'; // Alias to avoid
 
               <div class="divider"></div>
 
-              <p>Introductory statement about the projects and what they are</p>
+              <p>A few things I've made along the way</p>
             </div>
 
             <div class="featured-project">

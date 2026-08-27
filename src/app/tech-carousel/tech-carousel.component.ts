@@ -71,7 +71,7 @@ interface Tech {
 
   @keyframes scroll {
     from { transform: translateX(0); }
-    to { transform: translateX(-33.333333%); }
+    to { transform: translateX(-20%); }
   }
 
   .carousel-group {
@@ -137,7 +137,7 @@ export class TechCarouselComponent {
   ]
 
   get repeatedTech(): Tech[][] {
-    return [this.tech, this.tech, this.tech];
+    return [this.tech, this.tech, this.tech, this.tech, this.tech];
   }
 
 
