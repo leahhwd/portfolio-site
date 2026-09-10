@@ -30,7 +30,12 @@ import { environment } from '../../environments/environment';
             <div class="form-left">
                 <div class="form-group">
                     <label class="form-label" for="name">Name:</label>
-                    <input class="form-control" type="text" id="name" name="name" [(ngModel)]="contact.name" required placeholder="Required"/>
+                    <input class="form-control" type="text" id="name" name="name" [(ngModel)]="contact.name" required #name='ngModel'placeholder="Required"/>
+                    <div class="error-message">
+                      @if ((name.touched || contactForm.submitted) && name.invalid) {
+                        <p>Please enter a name.</p>
+                      }
+                    </div>
                 </div>
 
                 <div class="form-group">
@@ -69,12 +74,17 @@ import { environment } from '../../environments/environment';
             <div class="form-right">
                 <div class="form-group">
                     <label class="form-label" for="message">Message:</label>
-                    <textarea class="form-control" id="message" name="message" [(ngModel)]="contact.message" required placeholder="Required"></textarea>
+                    <textarea class="form-control" id="message" name="message" [(ngModel)]="contact.message" required #message='ngModel' placeholder="Required"></textarea>
+                    <div class="error-message">
+                      @if ((message.touched || contactForm.submitted) && message.invalid) {
+                        <p>Please enter a message.</p>
+                      }
+                    </div>
                 </div>
             </div>
         </div>
 
-    <button type="submit" [disabled]="!contactForm.form.valid || isSending">{{ isSending ? 'Sending...' : 'SUBMIT' }}</button>
+    <button type="submit" [disabled]="isSending">{{ isSending ? 'Sending...' : 'SUBMIT' }}</button>
 
         </form>
 

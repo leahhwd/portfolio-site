@@ -14,27 +14,42 @@ import { ProjectService, Project } from '../services/project'; // Alias to avoid
         <div class="slide-in" >
 
             <div class="projects-header">
-              <h3 class="eyebrow">My Work</h3>
+              <h3 class="eyebrow">What I've Been Building</h3>
               <h1>Projects</h1>
 
               <div class="divider"></div>
 
-              <p>A few things I've made along the way</p>
+              <p>A mix of client work, experiments, and ideas brought to life.</p>
             </div>
 
             <div class="featured-project">
               <div class="featured-image">
-                <img src="/images/construction.jpg" alt="Featured Project Image">
+                <img src="/images/featured-image.png" alt="Featured Project Image">
               </div>
               <div class="featured-info">
-                <h2>Featured Project</h2>
+                <h2>Holly Valley &mdash; Artist Portfolio</h2>
 
                 <div class="featured-divider"></div>
 
-                <p>This is a brief description of the featured project</p>
-                <button class="project-link">
-                  Check it out
-                </button>
+                <p>A whimsical, mobile-first portfolio website designed and developed for 
+                  illustrator Holly Valley. The site combines a cozy, sketchbook-inspired 
+                  visual identity with responsive layouts, custom typography, layered imagery, 
+                  and subtle interactive details to create a personal space for showcasing 
+                  her artwork.</p>
+                <div class="project-links">
+                  <a href="https://hollyillustration.netlify.app/" target="_blank">
+                  <button class="project-link-a">
+                    Check it out
+                  </button>
+                  </a>
+
+                  <a href="https://github.com/leahhwd/hv-art-portfolio" target="_blank">
+                  <button class="project-link-b">
+                    View Repository
+                  
+                  </button>
+                </a>
+                </div>
               </div>
             </div>
 
@@ -127,13 +142,14 @@ import { ProjectService, Project } from '../services/project'; // Alias to avoid
 
 
 .featured-info {
-  padding: 1rem 5%;
+  padding: 2rem 5%;
   color: #e6d3b3;
   font-family: 'Fira Code', sans-serif;
 }
 
 .featured-info h2 {
   font-weight: 400;
+  color: #d45c73;
 }
 
 .featured-info p {
@@ -142,12 +158,29 @@ import { ProjectService, Project } from '../services/project'; // Alias to avoid
   margin: 1rem 0;
 }
 
-.featured-info button {
+ .project-link-a {
   border: 1px solid #d45c73;
   background: transparent;
-  color: #e6d3b3;
+  color: #d45c73;
   border-radius: 10px;
-  box-shadow: 0 0 20px #A64253;
+ box-shadow: 0 0 20px rgba(212, 92, 115, 0.5);
+}
+
+.project-link-b {
+  border: 1px solid #6b7d3a;
+  background: transparent;
+  color: #6b7d3a;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(107, 125, 58, 0.5);
+}
+
+.project-links {
+  padding-top: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .80rem;
+
 }
 button {
   padding: 0.5rem 1rem;
@@ -182,9 +215,10 @@ button {
 .featured-image img {
   width: 100%;
   aspect-ratio: 16/9;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 8px;
   display: block;
+  padding: 20px;
   max-width: 1024px;
   filter: drop-shadow(0 0 12px rgba(166, 66, 83, 0.5));
 }
@@ -269,6 +303,13 @@ height: auto;
 
 @media (min-width: 768px) {
 
+  .project-links {
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 5%;
+    padding-bottom: 5%;
+  }
+
   .divider {
     width: 50%;
   }
@@ -296,6 +337,12 @@ height: auto;
   }
 
 
+}
+
+@media(min-width: 1024px) {
+  .project-links {
+    gap: 3rem;
+  }
 }
 
 `
