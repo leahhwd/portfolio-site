@@ -18,15 +18,15 @@ export class ProjectService {
 
   private Project = [
     { id: 0,
-      title: "Project Alpha",
-      description: "A cutting-edge project focused on AI development.",
-      img: "/images/construction.jpg",
-      link: "https://example.com/project-alpha"
+      title: "LMK | Web Studio",
+      description: "My personal portfolio featuring the very site you're browsing right now.",
+      img: "/images/lmk-web.webp",
+      link: "https://github.com/leahhwd/portfolio-site"
     },
     { id: 1,
       title: "Project Beta",
-      description: "An innovative platform for collaborative work.",
-      img: "/images/construction.jpg",
+      description: "An in-progress experiment comparing hand-coded development with AI-assisted vibe coding through the creation of a fictional music festival website.",
+      img: "/images/nocturne.webp",
       link: "https://example.com/project-beta"
     },
     { id: 2,
@@ -35,18 +35,6 @@ export class ProjectService {
       img: "/images/construction.jpg",
       link: "https://example.com/project-gamma"
     },
-    { id: 3,
-      title: "Project Delta",
-      description: "A cloud-based solution for data management.",
-      img: "/images/construction.jpg",
-      link: "https://example.com/project-delta"
-    },
-    { id: 4,
-      title: "Project Epsilon",
-      description: "An e-commerce platform with advanced features.",
-      img: "/images/construction.jpg",
-      link: "https://example.com/project-epsilon"
-    }
   ];
 
   getProjects() {

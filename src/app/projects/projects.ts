@@ -31,10 +31,10 @@ import { ProjectService, Project } from '../services/project'; // Alias to avoid
 
                 <div class="featured-divider"></div>
 
-                <p>A whimsical, mobile-first portfolio website designed and developed for 
-                  illustrator Holly Valley. The site combines a cozy, sketchbook-inspired 
-                  visual identity with responsive layouts, custom typography, layered imagery, 
-                  and subtle interactive details to create a personal space for showcasing 
+                <p>A whimsical, mobile-first portfolio website designed and developed for
+                  illustrator Holly Valley. The site combines a cozy, sketchbook-inspired
+                  visual identity with responsive layouts, custom typography, layered imagery,
+                  and subtle interactive details to create a personal space for showcasing
                   her artwork.</p>
                 <div class="project-links">
                   <a href="https://hollyillustration.netlify.app/" target="_blank">
@@ -46,7 +46,7 @@ import { ProjectService, Project } from '../services/project'; // Alias to avoid
                   <a href="https://github.com/leahhwd/hv-art-portfolio" target="_blank">
                   <button class="project-link-b">
                     View Repository
-                  
+
                   </button>
                 </a>
                 </div>
@@ -83,7 +83,7 @@ import { ProjectService, Project } from '../services/project'; // Alias to avoid
     margin : 0 auto;
     overflow: hidden;
     justify-content: center;
-    
+
   }
 
   .projects-header {
@@ -118,7 +118,7 @@ import { ProjectService, Project } from '../services/project'; // Alias to avoid
     text-transform: uppercase;
   }
 
-  
+
 
 .slide-in {
   transform: translateX(40px);
@@ -253,10 +253,10 @@ h4 {
 }
 
 .project-container img {
-width: clamp(125px, 25%, 180px);
+width: clamp(125px, 25%, 185px);
 height: auto;
   border-radius: 8px;
-  aspect-ratio: 1/1;
+  aspect-ratio: 16/9;
   object-fit: cover;
   border-radius: 8px;
   display: block;
@@ -313,7 +313,7 @@ height: auto;
   .divider {
     width: 50%;
   }
- 
+
   .other-projects {
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
