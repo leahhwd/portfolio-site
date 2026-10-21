@@ -24,7 +24,7 @@ export class ProjectService {
       link: "https://github.com/leahhwd/portfolio-site"
     },
     { id: 1,
-      title: "Project Beta",
+      title: "Nocturne",
       description: "An in-progress experiment comparing hand-coded development with AI-assisted vibe coding through the creation of a fictional music festival website.",
       img: "/images/nocturne.webp",
       link: "https://example.com/project-beta"

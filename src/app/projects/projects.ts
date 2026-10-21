@@ -37,18 +37,15 @@ import { ProjectService, Project } from '../services/project'; // Alias to avoid
                   and subtle interactive details to create a personal space for showcasing
                   her artwork.</p>
                 <div class="project-links">
-                  <a href="https://hollyillustration.netlify.app/" target="_blank">
-                  <button class="project-link-a">
+                  <a class="project-link-a" href="https://hollyillustration.netlify.app/" target="_blank">
                     Check it out
-                  </button>
                   </a>
 
-                  <a href="https://github.com/leahhwd/hv-art-portfolio" target="_blank">
-                  <button class="project-link-b">
-                    View Repository
+                  <a class="project-link-b" href="https://github.com/leahhwd/hv-art-portfolio" target="_blank">
 
-                  </button>
-                </a>
+                      View Repository
+
+                  </a>
                 </div>
               </div>
             </div>
@@ -62,9 +59,9 @@ import { ProjectService, Project } from '../services/project'; // Alias to avoid
                     <div class="project-info-overlay" [class.show]="activeIndex === i">
                       <h2>{{ project.title }}</h2>
                       <p>{{ project.description }}</p>
-                      <button class="project-link">
-                      View Project →
-                      </button>
+                      <a href="{{ project.link }}" target="_blank" class="project-link">
+                        View Project →
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -83,7 +80,6 @@ import { ProjectService, Project } from '../services/project'; // Alias to avoid
     margin : 0 auto;
     overflow: hidden;
     justify-content: center;
-
   }
 
   .projects-header {
@@ -109,7 +105,6 @@ import { ProjectService, Project } from '../services/project'; // Alias to avoid
   height: 8px;
 }
 
-
   .projects-header h1 {
     font-family: 'Fira Code', sans-serif;
     font-size: 2rem;
@@ -117,8 +112,6 @@ import { ProjectService, Project } from '../services/project'; // Alias to avoid
     font-weight: 500;
     text-transform: uppercase;
   }
-
-
 
 .slide-in {
   transform: translateX(40px);
@@ -158,21 +151,7 @@ import { ProjectService, Project } from '../services/project'; // Alias to avoid
   margin: 1rem 0;
 }
 
- .project-link-a {
-  border: 1px solid #d45c73;
-  background: transparent;
-  color: #d45c73;
-  border-radius: 10px;
- box-shadow: 0 0 20px rgba(212, 92, 115, 0.5);
-}
 
-.project-link-b {
-  border: 1px solid #6b7d3a;
-  background: transparent;
-  color: #6b7d3a;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(107, 125, 58, 0.5);
-}
 
 .project-links {
   padding-top: 10%;
@@ -182,13 +161,30 @@ import { ProjectService, Project } from '../services/project'; // Alias to avoid
   gap: .80rem;
 
 }
-button {
+
+.project-link-a,
+.project-link-b {
   padding: 0.5rem 1rem;
+  border-radius: 10px;
+  background: transparent;
+  font-family: 'Fira Code', sans-serif;
+  font-size: 1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.project-link-a { border: 1px solid #d45c73; color: #d45c73; }
+.project-link-b { border: 1px solid #6b7d3a; color: #6b7d3a; }
+
+.project-link {
+  text-decoration: none;
+  color: #d45c73;
   font-family: 'Fira Code', sans-serif;
   font-size: .80rem;
-  cursor: pointer;
   text-transform: uppercase;
-  transition: background-color 0.3s, color 0.3s;
+  transition: color 0.3s;
 }
 .projects-header p {
   font-family: 'Fira Code', sans-serif;
@@ -209,7 +205,7 @@ button {
   border-radius: 8px;
   background: rgba(0, 0, 0, 0.5);
   border: 1px solid rgb(212 92 115 / 0.5);
-  max-width: 1200px;
+  max-width: 900px;
 }
 
 .featured-image img {
@@ -224,12 +220,11 @@ button {
 }
 
 .other-projects {
-  display: grid;
-  grid-template-columns: 1fr;
-  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  margin: 2.5rem auto 0;
   gap: 1rem;
-  max-width: 1200px;
-
+  max-width: 600px;
 }
 
 h4 {
@@ -242,7 +237,7 @@ h4 {
 
 .project-container {
   width: 100%;
-  border: 1px solid rgba(107, 125, 58, 0.5);
+  border: 1px solid rgba(107, 125, 58, 0.75);
   border-radius: 8px;
   overflow: hidden;
   position: relative;
@@ -253,7 +248,7 @@ h4 {
 }
 
 .project-container img {
-width: clamp(125px, 25%, 185px);
+width: clamp(125px, 25%, 500px);
 height: auto;
   border-radius: 8px;
   aspect-ratio: 16/9;
@@ -261,7 +256,7 @@ height: auto;
   border-radius: 8px;
   display: block;
   margin-left: 0.5rem;
-  filter: drop-shadow(0 0 12px rgba(84, 100, 46, 0.4));
+  filter: drop-shadow(0 0 12px rgba(84, 100, 46, 0.7));
 }
 
 .project-info-overlay {
@@ -274,18 +269,16 @@ height: auto;
 }
 
 .project-info-overlay h2 {
-  font-size: 1.25rem;
-  font-weight: 400;
-  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
 }
 
 .project-info-overlay p {
-  font-size: 0.75rem;
-  line-height: 1.25;
-  margin: .5rem 0;
+  display: none;
 }
 
-.project-info-overlay button {
+a, .project-link {
   appearance: none;
   -webkit-appearance: none;
   background: none;
@@ -314,27 +307,30 @@ height: auto;
     width: 50%;
   }
 
-  .other-projects {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-  }
-
-  .other-projects h4,
-  .other-projects > .divider {
-    grid-column: span 2;
-  }
-
   .project-container {
     display: flex;
     flex-direction: column;
   }
   .project-container img {
+    width: 90%;
     margin-top: 1rem;
+    border-radius: 8px;
+
   }
 
-  .project-container button {
-    margin-top: 1rem;
+  .project-info-overlay h2 {
+    font-size: 1.2rem;
   }
+
+  .project-info-overlay p {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.project-links a {
+  justify-content: center;
+}
 
 
 }
