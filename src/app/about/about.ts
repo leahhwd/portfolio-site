@@ -179,10 +179,9 @@ padding: 12px 15px;
 }
 
 .projects-link {
-  border: 2px solid #d45c73;
+  border: 1px solid #d45c73;
   color: #d45c73;
   border-radius: 10px;
-  box-shadow: 0 0 20px #A64253;
 }
 
 .projects-link:hover {
@@ -191,9 +190,8 @@ padding: 12px 15px;
 }
 
 .contact-link {
-  border: 2px solid #6b7d3a;
+  border: 1px solid #6b7d3a;
   color: #6b7d3a;
-  box-shadow: 0 0 20px #6b7d3a;
   border-radius: 10px;
 }
 
@@ -214,7 +212,7 @@ padding: 12px 15px;
 .carousel {
   display: flex;
   flex-direction: column;
-  align-items: center; 
+  align-items: center;
   padding-bottom: 0.5rem;
 }
 
@@ -281,7 +279,7 @@ padding: 12px 15px;
  .cta-buttons {
     width: auto;
     align-self: start;
-    
+
   }
  .carousel-intro {
     padding-bottom: 2rem;

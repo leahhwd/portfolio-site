@@ -29,12 +29,6 @@ export class ProjectService {
       img: "/images/nocturne.webp",
       link: "https://example.com/project-beta"
     },
-    { id: 2,
-      title: "Project Gamma",
-      description: "A mobile app that revolutionizes social networking.",
-      img: "/images/construction.jpg",
-      link: "https://example.com/project-gamma"
-    },
   ];
 
   getProjects() {

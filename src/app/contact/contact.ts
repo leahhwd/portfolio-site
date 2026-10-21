@@ -51,14 +51,9 @@ import { environment } from '../../environments/environment';
                     <select class="form-control" id="interest" name="interest" [(ngModel)]="contact.interest">
                     <option value="" disabled selected>Select an option</option>
                     <option value="new-website">I need a new website</option>
-                    <option value="redesign">I want to redesign my website</option>
-                    <option value="mobile-apps">I need a mobile app</option>
-                    <option value="ui-ux-design">I need UI/UX design</option>
-                    <option value="ecommerce">I need eCommerce development</option>
-                    <option value="digital-marketing">I need digital marketing</option>
-                    <option value="consultation">I need a consultation</option>
-                    <option value="maintenance">I need ongoing maintenance</option>
-                    <option value="consultation">I want to discuss my options</option>
+                    <option value="job-opportunity">I'm hiring</option>
+                    <option value="freelance-project">I have a project in mind</option>
+                    <option value="general-inquiry">I just want to say hi</option>
                     <option value="other">Other</option>
                     </select>
                 </div>
@@ -105,7 +100,7 @@ import { environment } from '../../environments/environment';
     min-height: 100dvh;
     overflow: hidden;
     padding: 3rem 0 2rem;
-    
+
   }
 
   h1 {
@@ -115,7 +110,7 @@ import { environment } from '../../environments/environment';
     font-family: 'Fira Code', sans-serif;
     font-weight: 500;
     font-size: 1.5rem;
-    
+
   }
 
 .headline {
@@ -124,7 +119,7 @@ import { environment } from '../../environments/environment';
   color: #D9c3ab;
   font-family: 'Fira Code', sans-serif;
   font-weight: 500;
- 
+
 }
 
 /*CONTACT FORM GLITCH EFFECT*/
@@ -134,7 +129,7 @@ import { environment } from '../../environments/environment';
   height: 1.2em;
   position: relative;
   overflow: hidden;
-  
+
 }
 
 .glitch {
@@ -217,12 +212,11 @@ import { environment } from '../../environments/environment';
     max-width: 600px;
     width: calc(100% - 2rem);
     margin: 2rem auto 0;
-    padding: 0 10px 10px;
-    border: 2px solid #A64253;
-    box-shadow: 0 0 15px #A64253;
+    padding: 20px 20px 10px;
+    border: 1px solid #A64253;
     border-radius: 10px;
     background-color: transparent;
-    
+
 }
 
 .slide-in {
@@ -288,13 +282,13 @@ button {
     width:70%;
     margin: 1rem auto 0;
     padding: 0.6rem 1rem;
-    border: 2px solid #A64253;
+    border: 1px solid #A64253;
     background: transparent;
     color: #A64253;
     border-radius: 10px;
     font-family: 'Fira Code', monospace;
     cursor: pointer;
-    box-shadow: 0 0 20px #A64253;
+    box-shadow: 0 0 20px #A6425380;
 }
 
 button:hover {
@@ -352,7 +346,7 @@ button:hover {
         margin-top: 5%;
 
     }
-   
+
 
     button {
         margin: 1rem auto;

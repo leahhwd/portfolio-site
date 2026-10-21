@@ -22,7 +22,7 @@ import { RouterLink } from '@angular/router';
 
           <div class="divider"></div>
           <!--reduce? -->
-          <p class="description">I create dynamic and responsive web applications that provide seamless user experiences. 
+          <p class="description">I create dynamic and responsive web applications that provide seamless user experiences.
             With a strong foundation in both front-end and back-end technologies, I am passionate about
              crafting efficient and scalable solutions.</p>
 
@@ -49,7 +49,7 @@ import { RouterLink } from '@angular/router';
           <img src="images/code.svg" alt="Code Icon" width="40" height="40">
           <div class="feature-content">
             <h3>CLEAN CODE</h3>
-            <p>Clean and efficient code for scalable applications.</p>
+            <p>Simple code that does what it says.</p>
           </div>
         </div>
 
@@ -59,17 +59,7 @@ import { RouterLink } from '@angular/router';
           <img src="images/storage.svg" class="featured-icon" alt="Stack Icon" width="40" height="40">
           <div class="feature-content">
             <h3>Full-Stack</h3>
-            <p>Responsive design that works on all devices.</p>
-          </div>
-        </div>
-
-        <div class="feature-divider"></div>
-
-        <div class="feature">
-          <img src="images/rocket.svg" alt="rocket icon" class="featured-icon" width="40" height="40">
-          <div class="feature-content">
-            <h3>PERFORMANCE OPTIMIZATION</h3>
-            <p>Optimized performance for fast-loading applications.</p>
+            <p>I build both sides from interface to API.</p>
           </div>
         </div>
 
@@ -79,7 +69,7 @@ import { RouterLink } from '@angular/router';
           <img src="images/person.svg" alt="person icon" class="featured-icon" width="40" height="40">
           <div class="feature-content">
             <h3>User Focused</h3>
-            <p>Contemporary user interface and experience design.</p>
+            <p>Designing with real people in mind, tested on real devices.</p>
           </div>
         </div>
 
@@ -186,10 +176,9 @@ import { RouterLink } from '@angular/router';
 }
 
 .projects-link {
-  border: 2px solid #d45c73;
+  border: 1px solid #d45c73;
   color: #d45c73;
   border-radius: 10px;
-  box-shadow: 0 0 20px #A64253;
 }
 
 .projects-link:hover {
@@ -198,9 +187,8 @@ import { RouterLink } from '@angular/router';
 }
 
 .about-link {
-  border: 2px solid #6b7d3a;
+  border: 1px solid #6b7d3a;
   color: #6b7d3a;
-  box-shadow: 0 0 20px #6b7d3a;
   border-radius: 10px;
 }
 
@@ -294,7 +282,7 @@ import { RouterLink } from '@angular/router';
   .cta-buttons {
     flex-direction: row;
     gap: 20px;
-    
+
   }
 
   .cta-buttons a {
