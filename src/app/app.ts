@@ -11,52 +11,54 @@ import { transition, trigger, style, animate, query } from '@angular/animations'
   template: `
   <div class='wrapper'>
 
-      <nav class='nav-bar'>
+      <nav class='nav-bar' aria-label='Main'>
 
 
-        <a class='nav__logo' [routerLink]="['/']"><img src="images/L-3.png" width="100" alt="Logo" (click)="closeMobileNav()"></a> <!-- Fix logo width -->
+        <a class='nav__logo' [routerLink]="['/']" (click)="closeMobileNav()">LMK</a> <!-- Fix logo width -->
 
         <!--Hamburger Menu for Mobile-->
-        <button class='hamburger' id='hamburger' (click)="toggleMobileNav()">
+        <button class='hamburger' type="button" aria-label="Toggle navigation" (click)="toggleMobileNav()">
           <span class='bar'></span>
           <span class='bar'></span>
           <span class='bar'></span>
         </button>
 
-        <div class="mobile-nav" id="mobile-nav" [class.open]="mobileNavOpen">
-          <ul class='mobile-nav__list'>
-            <li class='mobile-nav__item'><a class='mobile-nav__link' [routerLink]="['/about']" (click)="closeMobileNav()">01. About me</a></li>
-            <li class='mobile-nav__item'><a class='mobile-nav__link' [routerLink]="['/projects']" (click)="closeMobileNav()">02. my Projects</a></li>
-            <li class='mobile-nav__item'><a class='mobile-nav__link mobile-nav__link--contact' [routerLink]="['/contact']" (click)="closeMobileNav()">Contact</a></li>
-          </ul>
-        </div>
+        <div class="nav__menu" id="nav-menu" [class.open]="mobileNavOpen">
+              <ul class="nav__list">
+                <li>
+                  <a class="nav__link" routerLink="/about" routerLinkActive="active-link"
+                    ariaCurrentWhenActive="page" (click)="closeMobileNav()">
+                    <span class="nav__num">01</span>About
+                  </a>
+                </li>
+                <li>
+                  <a class="nav__link" routerLink="/projects" routerLinkActive="active-link"
+                    ariaCurrentWhenActive="page" (click)="closeMobileNav()">
+                    <span class="nav__num">02</span>Projects
+                  </a>
+                </li>
+                <li>
+                  <a class="nav__link" routerLink="/contact" routerLinkActive="active-link"
+                    ariaCurrentWhenActive="page" (click)="closeMobileNav()">
+                    <span class="nav__num">03</span>Contact
+                  </a>
+                </li>
+              </ul>
 
-        <!--Regular Nav for Desktop-->
-
-
-        <ul class='nav__list'>
-          <li class='nav__item'><a class='nav__link' [routerLink]="['/about']" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">01. About me</a></li>
-          <li class='nav__item'><a class='nav__link' [routerLink]="['/projects']" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">02. my Projects</a></li>
-          <li class='nav__item'><a class='nav__link nav__link--contact' [routerLink]="['/contact']">Contact</a></li>
-        </ul>
-
-        <div class='social-icons'>
-          <a class='social-icon' href='https://github.com/leahhwd' target='_blank'> <!--Replace URl -->
-            <img src="images/github-mark.png" width="50" alt="GitHub">
-          </a>
-          <a class='social-icon' href='https://linkedin.com/in/lmkdev' target='_blank'> <!--Replace URl -->
-            <img src="images/InBug-Black.png" width="50" alt="LinkedIn">
-          </a>
-        </div>
-
+            <div class='nav__social'>
+                    <a href="https://github.com/leahmkdev" target="_blank" rel="noopener">GitHub ↗</a>
+                    <a href="https://linkedin.com/in/lmkdev" target="_blank" rel="noopener">LinkedIn ↗</a>
+            </div>
+          </div>
       </nav>
- <main class='main-content'>
-      <section class='content'>
-        <router-outlet></router-outlet>
-      </section>
 
+    <main class='main-content'>
+          <section class='content'>
+            <router-outlet></router-outlet>
+          </section>
     </main>
-  </div>`,
+  </div>
+  `,
   styles: [`
 
 

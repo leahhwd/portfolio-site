@@ -125,8 +125,9 @@ import { RouterLink } from '@angular/router';
 
 .header-name-light {
   font-family: 'Allura', cursive;
+  font-weight: 200;
   font-size: 2.25rem;
-  margin-top: -50px;
+  margin-top: -40px;
   letter-spacing: 2px;
   color: #d45c73;
 }
